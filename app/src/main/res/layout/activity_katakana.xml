@@ -11,30 +11,36 @@
             >
 
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_katakana"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title=" ">
+
     <TextView
         android:id="@+id/retour_arriere"
-        android:layout_width="wrap_content"
+        android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="1dp"
         android:text="@string/back"
-        android:textSize="40sp" />
+        android:textSize="40sp"
 
+        />
+        <TextView
 
-
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:text="@string/katakana"
+            android:textSize="30sp" />
+    </androidx.appcompat.widget.Toolbar>
     <Button
         android:id="@+id/button_hiragana"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/button_hiragana" />
-    <TextView
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center_horizontal"
-        android:text="@string/katakana"
-        android:textSize="30sp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
@@ -44,7 +50,7 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         android:orientation="vertical"
-        android:id="@+id/kana_recyclerview"
+        android:id="@+id/katakana_recyclerview"
 
         android:scrollbars="vertical" />
 
