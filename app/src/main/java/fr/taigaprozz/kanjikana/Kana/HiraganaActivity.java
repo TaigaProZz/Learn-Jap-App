@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,7 +29,7 @@ public class HiraganaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_hiragana);
-
+        setSupportActionBar((Toolbar)findViewById(R.id.toolbar_hiragana));
 
 
         // bouton retour en haut a gauche
@@ -112,7 +113,7 @@ public class HiraganaActivity extends AppCompatActivity {
         listeKana.add(new Kana (R.drawable.hiragana_n));
 
 
-        RecyclerView recyclerView = findViewById(R.id.kana_recyclerview);
+        RecyclerView recyclerView = findViewById(R.id.hiragana_recyclerview);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -122,7 +123,7 @@ public class HiraganaActivity extends AppCompatActivity {
         recyclerView.setAdapter(kanaAdapter);
 
         GridLayoutManager manager = new GridLayoutManager (context, 5, GridLayoutManager .VERTICAL, false);
-        manager .setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup () {
+        manager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup () {
 
             @Override
             public int getSpanSize(int arg0) {
