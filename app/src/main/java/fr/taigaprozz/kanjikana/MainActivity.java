@@ -3,11 +3,18 @@ package fr.taigaprozz.kanjikana;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.fonts.Font;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.FontResourcesParserCompat;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 import fr.taigaprozz.R;
 import fr.taigaprozz.kanjikana.Kana.HiraganaActivity;
@@ -22,11 +29,15 @@ public class MainActivity extends AppCompatActivity {
     private ImageView numbers_start;
     private ImageView kana_start_5;
 
+
+
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         this.kana_start = findViewById(R.id.hiragana_button);
         kana_start.setOnClickListener(new View.OnClickListener() {
@@ -71,6 +82,9 @@ public class MainActivity extends AppCompatActivity {
                 finish ();
             }
         }   );
+
+
+
 
     }
 }

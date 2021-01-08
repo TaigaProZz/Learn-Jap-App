@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_color"
+    android:background="@drawable/wallpaper_main"
     android:orientation="vertical"
     >
 
@@ -15,33 +15,45 @@
         android:id="@+id/toolbar_hiragana"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         app:title=" " >
 
-        <TextView
-            android:id="@+id/retour_arriere"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
-            android:text="@string/back"
-            android:textSize="40sp"
-            />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center_horizontal"
-            android:text="@string/hiragana"
-            android:textSize="30sp" />
+            <TextView
+                android:id="@+id/retour_arriere"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:text="@string/back"
+                android:textSize="40sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="115dp"
+                android:layout_height="39dp"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:text="@string/hiragana"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/retour_arriere"
+                 />
+
+            <Button
+                android:id="@+id/button_katakana"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/button_katakana"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
 
-    <Button
-        android:id="@+id/button_katakana"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/button_katakana" />
 
 
 
