@@ -58,34 +58,63 @@ public class KatakanaActivity extends AppCompatActivity {
 
         // liste
         List<Kana> listeKana = new ArrayList<>();
-        listeKana.add(new Kana (R.drawable.hiragana_a));
-        listeKana.add(new Kana (R.drawable.hiragana_i));
-        listeKana.add(new Kana (R.drawable.kana_u_icon));
-        listeKana.add(new Kana (R.drawable.kana_e_icon));
-        listeKana.add(new Kana (R.drawable.kana_o_icon));
-        listeKana.add(new Kana (R.drawable.kana_ka_icon));
-        listeKana.add(new Kana (R.drawable.kana_ki_icon));
-        listeKana.add(new Kana (R.drawable.kana_ku_icon));
-        listeKana.add(new Kana (R.drawable.kana_ke_icon));
-        listeKana.add(new Kana (R.drawable.kana_ko_icon));
-        listeKana.add(new Kana (R.drawable.kana_sa_icon));
-        listeKana.add(new Kana (R.drawable.kana_shi_icon));
-        listeKana.add(new Kana (R.drawable.kana_su_icon));
-        listeKana.add(new Kana (R.drawable.kana_se_icon));
-        listeKana.add(new Kana (R.drawable.kana_so_icon));
-        listeKana.add(new Kana (R.drawable.kana_ta_icon));
-        listeKana.add(new Kana (R.drawable.kana_chi_icon));
-        listeKana.add(new Kana (R.drawable.kana_tsu_icon));
-        listeKana.add(new Kana (R.drawable.kana_te_icon));
-        listeKana.add(new Kana (R.drawable.kana_to_icon));
-        listeKana.add(new Kana (R.drawable.kana_na_icon));
-        listeKana.add(new Kana (R.drawable.kana_ni_icon));
-        listeKana.add(new Kana (R.drawable.kana_nu_icon));
-        listeKana.add(new Kana (R.drawable.kana_ne_icon));
-        listeKana.add(new Kana (R.drawable.kana_no_icon));
+      listeKana.add(new Kana (R.drawable.katakana_a));
+      listeKana.add(new Kana (R.drawable.katakana_i));
+      listeKana.add(new Kana (R.drawable.katakana_u));
+      listeKana.add(new Kana (R.drawable.katakana_e));
+      listeKana.add(new Kana (R.drawable.katakana_o));
+      listeKana.add(new Kana (R.drawable.katakana_ka));
+      listeKana.add(new Kana (R.drawable.katakana_ki));
+      listeKana.add(new Kana (R.drawable.katakana_ku));
+      listeKana.add(new Kana (R.drawable.katakana_ke));
+      listeKana.add(new Kana (R.drawable.katakana_ko));
+      listeKana.add(new Kana (R.drawable.katakana_sa));
+      listeKana.add(new Kana (R.drawable.katakana_shi));
+      listeKana.add(new Kana (R.drawable.katakana_su));
+      listeKana.add(new Kana (R.drawable.katakana_se));
+      listeKana.add(new Kana (R.drawable.katakana_so));
+      //listeKana.add(new Kana (R.drawable.katakana_ta));
+      //listeKana.add(new Kana (R.drawable.katakana_chi));
+      //listeKana.add(new Kana (R.drawable.katakana_tsu));
+      //listeKana.add(new Kana (R.drawable.katakana_te));
+      //listeKana.add(new Kana (R.drawable.katakana_to));
+      //listeKana.add(new Kana (R.drawable.katakana_na));
+      //listeKana.add(new Kana (R.drawable.katakana_ni));
+      //listeKana.add(new Kana (R.drawable.katakana_nu));
+      //listeKana.add(new Kana (R.drawable.katakana_ne));
+      //listeKana.add(new Kana (R.drawable.katakana_no));
+      //listeKana.add(new Kana (R.drawable.katakana_ha));
+      //listeKana.add(new Kana (R.drawable.katakana_hi));
+      //listeKana.add(new Kana (R.drawable.katakana_fu));
+      //listeKana.add(new Kana (R.drawable.katakana_he));
+      //listeKana.add(new Kana (R.drawable.katakana_ho));
+      //listeKana.add(new Kana (R.drawable.katakana_ma));
+      //listeKana.add(new Kana (R.drawable.katakana_mi));
+      //listeKana.add(new Kana (R.drawable.katakana_mu));
+      //listeKana.add(new Kana (R.drawable.katakana_me));
+      //listeKana.add(new Kana (R.drawable.katakana_mo));
+      //listeKana.add(new Kana (R.drawable.katakana_ya));
+      //listeKana.add(new Kana(0));
+      //listeKana.add(new Kana (R.drawable.katakana_yu));
+      //listeKana.add(new Kana(0));
+      //listeKana.add(new Kana (R.drawable.katakana_yo));
+      //listeKana.add(new Kana (R.drawable.katakana_ra));
+      //listeKana.add(new Kana (R.drawable.katakana_ri));
+      //listeKana.add(new Kana (R.drawable.katakana_ru));
+      //listeKana.add(new Kana (R.drawable.katakana_re));
+      //listeKana.add(new Kana (R.drawable.katakana_ro));
+      //listeKana.add(new Kana (R.drawable.katakana_wa));
+      //listeKana.add(new Kana(0));
+      //listeKana.add(new Kana(0));
+      //listeKana.add(new Kana(0));
+      //listeKana.add(new Kana (R.drawable.katakana_wo));
+      //listeKana.add(new Kana(0));
+      //listeKana.add(new Kana(0));
+      //listeKana.add(new Kana(0));
+      //listeKana.add(new Kana(0));
+      //listeKana.add(new Kana (R.drawable.katakana_n));
 
-
-        recyclerView = findViewById(R.id.kana_recyclerview);
+        recyclerView = findViewById(R.id.katakana_recyclerview);
 
         layoutManager = new LinearLayoutManager (this);
         recyclerView.setLayoutManager(layoutManager);
@@ -95,7 +124,7 @@ public class KatakanaActivity extends AppCompatActivity {
         recyclerView.setAdapter(kanaAdapter);
 
         GridLayoutManager manager = new GridLayoutManager (context, 5, GridLayoutManager .VERTICAL, false);
-        manager .setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup () {
+        manager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup () {
 
             @Override
             public int getSpanSize(int arg0) {
