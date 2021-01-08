@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/kana"
-        android:layout_width="70dp"
-        android:layout_height="116dp"
+        android:layout_width="54dp"
+        android:layout_height="104dp"
         android:src="@drawable/hiragana_a"
 
         />
