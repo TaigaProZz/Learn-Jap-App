@@ -8,5 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="brun">#6B5727</color>
-    <color name="background_color">#d3ae85  </color>
+    <color name="background_color">#d3ae85</color>
+    <color name="red">#db3103</color>
+    <color name="cyan"> #0ef0e2 </color>
+    <color name="blanc_gris"> #c9c9c9 </color>
 </resources>

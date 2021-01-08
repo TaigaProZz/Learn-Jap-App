@@ -28,7 +28,7 @@
 
 
     <string name="BACK"><![CDATA[<]]></string>
-    <string name="button_katakana">Katakana</string>
+    <string name="button_katakana">katakana</string>
     <string name="button_hiragana">hiragana</string>
     <string name="nothing">  </string>
     <string name="title_activity_kana">KanaActivity</string>

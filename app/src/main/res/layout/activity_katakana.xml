@@ -12,6 +12,7 @@
 
 
     <androidx.appcompat.widget.Toolbar
+        android:background="@drawable/toolbar_bg"
         android:id="@+id/toolbar_katakana"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,37 +24,42 @@
 
             <TextView
                 android:id="@+id/retour_arriere"
-                android:layout_width="40dp"
-                android:layout_height="match_parent"
+                android:layout_width="36dp"
+                android:layout_height="65dp"
                 android:text="@string/back"
                 android:textSize="40sp"
-
+                android:textColor="@color/blanc_gris"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-
+                android:textColor="@color/blanc_gris"
                 android:id="@+id/textView2"
-                android:layout_width="115dp"
-                android:layout_height="39dp"
+                android:layout_width="112dp"
+                android:layout_height="42dp"
                 android:layout_gravity="center"
                 android:gravity="center_horizontal"
                 android:text="@string/katakana"
                 android:textSize="22sp"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/retour_arriere"
                 />
 
             <Button
                 android:id="@+id/button_hiragana"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="106dp"
+                android:layout_height="52dp"
                 android:layout_gravity="center"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/button_bg"
                 android:text="@string/button_hiragana"
+                android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.461" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.appcompat.widget.Toolbar>
