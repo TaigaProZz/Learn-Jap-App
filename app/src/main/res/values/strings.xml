@@ -1,32 +1,23 @@
 <resources>
     <string name="app_name">Kana et Kanji</string>
-
     <string name="hiragana">Hiragana</string>
     <string name="katakana">Katakana</string>
-    <string name="oyahou">おはよう !</string>
+    <string name="quiz">Quiz</string>
     <string name="kanji">Kanji</string>
-    <string name="t">T</string>
     <string name="nom_de_l_appli">Nom de l\'appli</string>
     <string name="kana_default_name">Kana</string>
     <string name="nom_kana">15sp</string>
     <string name="title_activity_kana_scroll">ScrollingActivity</string>
-
     <string name="action_settings">Settings</string>
     <string name="todo">TODO</string>
     <string name="title_activity_scrolling">Kana</string>
     <string name="retour">Retour</string>
     <string name="back"><![CDATA[←]]></string>
     <string name="app_name_menu">nom à définir</string>
-
-
     <string name="description_kana">
         "\nL'écriture japonaise est composée de 4 écritures différentes :"
         "\nHiragana, Katakana, Kanji, Rōmaji.\n"
-        "\nIci, nous allons voir les Hiraganas et Katakanas :"
-        </string>
-
-
-
+        "\nIci, nous allons voir les Hiraganas et Katakanas :" </string>
     <string name="BACK"><![CDATA[<]]></string>
     <string name="button_katakana">katakana</string>
     <string name="button_hiragana">hiragana</string>
@@ -39,4 +30,5 @@
     <string name="title_activity_tabbed">TabbedActivity</string>
     <string name="title_activity_main">MainActivity</string>
 
+    <string name="n_katakana">ン</string>
 </resources>

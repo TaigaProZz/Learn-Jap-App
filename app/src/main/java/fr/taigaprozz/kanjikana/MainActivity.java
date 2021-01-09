@@ -3,30 +3,22 @@ package fr.taigaprozz.kanjikana;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.fonts.Font;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.FontResourcesParserCompat;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 
 import fr.taigaprozz.R;
 import fr.taigaprozz.kanjikana.Kana.HiraganaActivity;
 import fr.taigaprozz.kanjikana.Kana.KatakanaActivity;
-import fr.taigaprozz.kanjikana.Kanji.KanjiActivity;
-import fr.taigaprozz.kanjikana.Numbers.NumbersActivity;
+import fr.taigaprozz.kanjikana.Quiz.Quiz;
 
 
 public class MainActivity extends AppCompatActivity {
     private ImageView kana_start;
     private ImageView kanji_start;
-    private ImageView numbers_start;
+    private ImageView quiz_start;
     private ImageView kana_start_5;
 
 
@@ -62,11 +54,11 @@ public class MainActivity extends AppCompatActivity {
         }   );
 
 
-        this.numbers_start = findViewById (R.id.numbers_start);
-        numbers_start.setOnClickListener (new View.OnClickListener () {
+        this.quiz_start = findViewById (R.id.numbers_start);
+        quiz_start.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Intent otherActivity3 = new Intent (getApplicationContext (), NumbersActivity.class);
+                Intent otherActivity3 = new Intent (getApplicationContext (), Quiz.class);
                 startActivity (otherActivity3);
                 finish ();
             }

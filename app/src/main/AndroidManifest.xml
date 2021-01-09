@@ -23,7 +23,7 @@
             android:name=".kanjikana.Kana.HiraganaActivity"
             android:label="@string/title_activity_scrolling"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".kanjikana.Numbers.NumbersActivity" />
+        <activity android:name=".kanjikana.Quiz.Quiz" />
         <activity android:name=".kanjikana.Kanji.KanjiActivity" />
         <activity android:name=".kanjikana.MainActivity">
             <intent-filter>
