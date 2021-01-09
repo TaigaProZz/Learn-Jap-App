@@ -4,7 +4,6 @@ public class Kana {
 
     private int kana;
 
-
     public Kana(int kana) {
         this.kana = kana;
     }

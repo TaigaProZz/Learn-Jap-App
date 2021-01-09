@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     private ImageView kana_start_5;
 
 
-
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,53 +29,38 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
+        // start hiragana activity with the button
         this.kana_start = findViewById(R.id.hiragana_button);
         kana_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent otherActivity = new Intent(getApplicationContext (), HiraganaActivity.class);
-                startActivity (otherActivity);
-                finish ();
+                Intent otherActivity = new Intent(getApplicationContext(), HiraganaActivity.class);
+                startActivity(otherActivity);
+                finish();
             }
-        }   );
+        });
 
-
-        this.kanji_start = findViewById (R.id.katakana_button);
-        kanji_start.setOnClickListener (new View.OnClickListener () {
+        // start katakana activity with the button
+        this.kanji_start = findViewById(R.id.katakana_button);
+        kanji_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent otherActivity2 = new Intent (getApplicationContext (), KatakanaActivity.class);
-                startActivity (otherActivity2);
-                finish ();
+                Intent otherActivity2 = new Intent(getApplicationContext(), KatakanaActivity.class);
+                startActivity(otherActivity2);
+                finish();
 
             }
-        }   );
+        });
 
-
-        this.quiz_start = findViewById (R.id.numbers_start);
-        quiz_start.setOnClickListener (new View.OnClickListener () {
+        // start quiz activity with the button
+        this.quiz_start = findViewById(R.id.numbers_start);
+        quiz_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent otherActivity3 = new Intent (getApplicationContext (), Quiz.class);
-                startActivity (otherActivity3);
-                finish ();
+                Intent otherActivity3 = new Intent(getApplicationContext(), Quiz.class);
+                startActivity(otherActivity3);
+                finish();
             }
-        }   );
-
-
-        kana_start_5 = findViewById (R.id.kana_start5);
-        kana_start_5.setOnClickListener (new View.OnClickListener () {
-            @Override
-            public void onClick(View v) {
-                Intent otherActivity4 = new Intent (getApplicationContext (), TabbedActivity.class);
-                startActivity (otherActivity4);
-                finish ();
-            }
-        }   );
-
-
-
-
+        });
     }
 }

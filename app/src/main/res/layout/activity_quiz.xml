@@ -3,28 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Numbers.NumbersActivity">
+    android:layout_height="match_parent">
 
 
     <androidx.appcompat.widget.Toolbar
-        android:background="@drawable/toolbar_bg"
         android:id="@+id/toolbar_katakana"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title=" ">
+        android:background="@drawable/toolbar_bg"
+        app:title=" "
+        tools:ignore="MissingConstraints">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/backArrow"
                 android:layout_width="36dp"
                 android:layout_height="65dp"
                 android:text="@string/back"
-                android:textSize="40sp"
                 android:textColor="@color/blanc_gris"
+                android:textSize="40sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -61,6 +61,7 @@
 
 
     <TextView
+        android:id="@+id/hiragana_katakana"
         android:layout_width="91dp"
         android:layout_height="125dp"
         android:layout_marginTop="148dp"
@@ -69,6 +70,34 @@
         android:textSize="74sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_katakana" />
+
+    <EditText
+        android:id="@+id/editTextAnswer"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="412dp"
+        android:gravity="center"
+        android:hint="@string/reponse_quiz_hint"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:maxLength="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="59dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="344dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/button_valide_bg"
+        android:text="@string/valide"
+        android:textColor="@color/green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.743"
+        app:layout_constraintStart_toEndOf="@+id/editText2"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_katakana" />
 
 

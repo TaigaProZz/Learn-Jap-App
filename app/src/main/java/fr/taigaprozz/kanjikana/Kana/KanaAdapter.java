@@ -1,11 +1,8 @@
 package fr.taigaprozz.kanjikana.Kana;
 
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,11 +13,12 @@ import java.util.List;
 
 import fr.taigaprozz.R;
 
-public class KanaAdapter extends RecyclerView.Adapter<KanaAdapter.KanaViewHolder>{
+public class KanaAdapter extends RecyclerView.Adapter<KanaAdapter.KanaViewHolder> {
     List<Kana> listeKana;
 
-    public static class KanaViewHolder extends RecyclerView.ViewHolder{
+    public static class KanaViewHolder extends RecyclerView.ViewHolder {
         ImageView kana;
+
         public KanaViewHolder(View itemView) {
             super(itemView);
             kana = itemView.findViewById(R.id.kana);
@@ -41,7 +39,11 @@ public class KanaAdapter extends RecyclerView.Adapter<KanaAdapter.KanaViewHolder
     @Override
     public void onBindViewHolder(KanaViewHolder holder, int position) {
         Kana kana = listeKana.get(position);
-        holder.kana.setImageResource (kana.getKana ());
+        holder.kana.setImageResource(kana.getKana());
+    }
+
+    public Kana getKana(int position) {
+        return this.listeKana.get(position);
     }
 
     @Override

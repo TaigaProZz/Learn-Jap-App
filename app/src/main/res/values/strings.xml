@@ -31,4 +31,6 @@
     <string name="title_activity_main">MainActivity</string>
 
     <string name="n_katakana">ン</string>
+    <string name="reponse_quiz_hint">Réponse :</string>
+    <string name="valide">✓</string>
 </resources>
