@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         // start hiragana activity with the button
-        ImageView kana_start = findViewById(R.id.hiragana_button);
-        kana_start.setOnClickListener(new View.OnClickListener() {
+        ImageView hiraganaActivityImageMain = findViewById(R.id.hiragana_button);
+        hiraganaActivityImageMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
@@ -35,24 +35,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // start katakana activity with the button
-        ImageView kanji_start = findViewById(R.id.katakana_button);
-        kanji_start.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        ImageView katakanaActivityMainImage = findViewById(R.id.katakana_button);
+        katakanaActivityMainImage.setOnClickListener(v -> {
                 finish();
                 startActivity(new Intent(getApplicationContext(), KatakanaActivity.class));
-            }
         });
 
         // start quiz activity with the button
-        ImageView quiz_start = findViewById(R.id.quiz_start);
-        quiz_start.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Quiz.class);
+        ImageView quizActivityMainImage = findViewById(R.id.quiz_start);
+        quizActivityMainImage.setOnClickListener(v -> {
                 finish();
-                startActivity(intent);
-            }
+                startActivity(new Intent(getApplicationContext(), Quiz.class));
         });
     }
 }

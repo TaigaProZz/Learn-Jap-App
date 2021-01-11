@@ -1,28 +1,18 @@
 package fr.taigaprozz.kanjikana.Quiz;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
 
 import fr.taigaprozz.R;
-import fr.taigaprozz.kanjikana.Kana.Kana;
 import fr.taigaprozz.kanjikana.MainActivity;
 
 
@@ -37,20 +27,15 @@ public class Quiz extends AppCompatActivity {
         EditText editTextReponseUser = findViewById(R.id.editTextAnswer);
         Button boutonValide = findViewById(R.id.buttonValide);
         Button buttonSkip = findViewById(R.id.buttonSkip);
-
+        TextView textViewHiragana = findViewById(R.id.hiragana_lettre_quiz);
+        TextView backArrow = findViewById(R.id.backArrow);
 
         // return button arrow
-        TextView backArrow = findViewById(R.id.backArrow);
-        backArrow.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
+        backArrow.setOnClickListener(v -> {
                 finish();
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
-            }
         });
 
-        TextView textViewHiragana = findViewById(R.id.hiragana_lettre_quiz);
         // list of images of hiragana
         String[] hiraganaList = new String[]{
                 "あ", "い", "う", "え", "お",
@@ -63,12 +48,10 @@ public class Quiz extends AppCompatActivity {
                 "や", "ゆ", "よ",
                 "ら", "り", "る", "れ", "ろ",
                 "わ", "を",
-                "ん"
+                "ん"  };
 
-        };
-
-        // en romaji
-        String [] hiraganaRomaji = new String[]{
+        // list in latin letter
+        String [] latinLetterList = new String[]{
                 "a", "i", "u", "e", "o",
                 "ka", "ki", "ku", "ke", "ko", "sa", "shi", "su", "se", "so",
                 "ta", "chi", "tsu", "te", "to",
@@ -78,35 +61,29 @@ public class Quiz extends AppCompatActivity {
                 "ya", "yu", "yo",
                 "ra", "ri", "ru", "re", "ro",
                 "wa", "wo",
-                "n"
-        };
+                "n"  };
 
+        // choise a random hiragana in hiragana list and latin letter list
         Random random = new Random();
         int randomNumber = random.nextInt(hiraganaList.length - 1);
         final String[] choiseRandomHiragana = {hiraganaList[randomNumber]};
-        final String[] choiseRandomRomaji = {hiraganaRomaji[randomNumber]};
+        final String[] choiseRandomRomaji = {latinLetterList[randomNumber]};
         textViewHiragana.setText(choiseRandomHiragana[0]);
 
-
-        System.out.println("le romaji aleatoire est :" + choiseRandomRomaji[0]);
-
-
-        // skip button click listener
+        // skip button with click listener
         buttonSkip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Random random = new Random();
                 int randomNumber = random.nextInt(hiraganaList.length - 1);
                 choiseRandomHiragana[0] = hiraganaList[randomNumber];
-                choiseRandomRomaji[0] = hiraganaRomaji[randomNumber];
+                choiseRandomRomaji[0] = latinLetterList[randomNumber];
                 textViewHiragana.setText(choiseRandomHiragana[0]);
             }
         });
 
-        // button validate click listener
-        boutonValide.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        // validate button with click listener
+        boutonValide.setOnClickListener(v -> {
                 // print in console
                 System.out.println("la reponse de l'user :" + editTextReponseUser.getText().toString() + " la bonne reponse : " + choiseRandomRomaji[0]);
 
@@ -114,15 +91,13 @@ public class Quiz extends AppCompatActivity {
                 if (editTextReponseUser.getText().toString().equals(choiseRandomRomaji[0])){
                     Toast.makeText(getApplicationContext(), "Bravo ! La réponse était " + '"' + choiseRandomRomaji[0] + '"', Toast.LENGTH_SHORT).show();
                 }
-                else{Toast.makeText(getApplicationContext(), "C'est faux ! La bonne réponse était" + '"' + choiseRandomRomaji[0] + '"', Toast.LENGTH_SHORT).show();
+                else{Toast.makeText(getApplicationContext(), "C'est faux ! La bonne réponse était " + '"' + choiseRandomRomaji[0] + '"', Toast.LENGTH_SHORT).show();
                 }
-
-            }
         });
+
     }
 
-
-    // bouton retour avec bouton du phone
+    // return button of the phone
     @Override
     public void onBackPressed() {
         Intent i = new Intent(Quiz.this, MainActivity.class);
@@ -130,5 +105,4 @@ public class Quiz extends AppCompatActivity {
         startActivity(i);
         finish();
     }
-
 }
