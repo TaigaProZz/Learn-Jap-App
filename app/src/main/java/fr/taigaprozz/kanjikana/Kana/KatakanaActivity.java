@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,19 +21,19 @@ import fr.taigaprozz.kanjikana.MainActivity;
 
 
 public class KatakanaActivity extends AppCompatActivity {
-    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_katakana);
+        setSupportActionBar((Toolbar)(findViewById(R.id.toolbar_katakana)));
 
         // bouton page katakana
         Button button = findViewById(R.id.button_hiragana);
         button.setOnClickListener(v -> {
-            Intent otherActivity = new Intent(getApplicationContext(), HiraganaActivity.class);
-            startActivity(otherActivity);
             finish();
+            startActivity(new Intent(getApplicationContext(), HiraganaActivity.class));
+
         });
 
         // liste
@@ -100,7 +101,7 @@ public class KatakanaActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.katakana_recyclerview);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        GridLayoutManager manager = new GridLayoutManager(context, 5, GridLayoutManager.VERTICAL, false);
+        GridLayoutManager manager = new GridLayoutManager(getApplicationContext(), 5, GridLayoutManager.VERTICAL, false);
         manager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
             public int getSpanSize(int arg0) {
@@ -117,19 +118,19 @@ public class KatakanaActivity extends AppCompatActivity {
         // bouton retour en haut a gauche
         TextView retour_arriere = findViewById(R.id.retour_arriere);
         retour_arriere.setOnClickListener(v -> {
-            Intent otherActivity3 = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(otherActivity3);
             finish();
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
         });
     }
 
     //bouton retour du telephone
     @Override
     public void onBackPressed() {
+        finish();
         Intent i = new Intent(KatakanaActivity.this, MainActivity.class);
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
-        finish();
+
     }
 
 }

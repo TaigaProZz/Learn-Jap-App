@@ -61,7 +61,8 @@
 
 
     <TextView
-        android:id="@+id/hiragana_katakana"
+        android:id="@+id/hiragana_lettre_quiz"
+        android:src="@drawable/hiragana_ni"
         android:layout_width="91dp"
         android:layout_height="125dp"
         android:layout_marginTop="148dp"
@@ -72,22 +73,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_katakana" />
 
+
+
     <EditText
         android:id="@+id/editTextAnswer"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="412dp"
         android:gravity="center"
+        android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz  "
         android:hint="@string/reponse_quiz_hint"
+        android:freezesText="true"
         android:imeOptions="actionDone"
         android:inputType="text"
-        android:maxLength="2"
+        android:maxLength="3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonValide"
         android:layout_width="59dp"
         android:layout_height="54dp"
         android:layout_marginTop="344dp"
@@ -97,8 +102,19 @@
         android:textColor="@color/green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.743"
-        app:layout_constraintStart_toEndOf="@+id/editText2"
+        app:layout_constraintStart_toEndOf="@+id/editTextAnswer"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_katakana" />
+
+    <Button
+        android:id="@+id/buttonSkip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="412dp"
+        android:text="@string/skip"
+        app:layout_constraintEnd_toStartOf="@+id/editTextAnswer"
+        app:layout_constraintHorizontal_bias="0.372"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

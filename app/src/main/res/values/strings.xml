@@ -14,10 +14,7 @@
     <string name="retour">Retour</string>
     <string name="back"><![CDATA[←]]></string>
     <string name="app_name_menu">nom à définir</string>
-    <string name="description_kana">
-        "\nL'écriture japonaise est composée de 4 écritures différentes :"
-        "\nHiragana, Katakana, Kanji, Rōmaji.\n"
-        "\nIci, nous allons voir les Hiraganas et Katakanas :" </string>
+
     <string name="BACK"><![CDATA[<]]></string>
     <string name="button_katakana">katakana</string>
     <string name="button_hiragana">hiragana</string>
@@ -30,7 +27,59 @@
     <string name="title_activity_tabbed">TabbedActivity</string>
     <string name="title_activity_main">MainActivity</string>
 
-    <string name="n_katakana">ン</string>
+    <string name="n_katakana"> </string>
     <string name="reponse_quiz_hint">Réponse :</string>
     <string name="valide">✓</string>
+    <string name="description_kana">
+        "\nL'écriture japonaise est composée de 4 écritures différentes :"
+        "\nHiragana, Katakana, Kanji, Rōmaji.\n"
+        "\nIci, nous allons voir les Hiraganas et Katakanas :" </string>
+    <string name="a">あ</string>
+    <string name="i">い</string>
+    <string name="u">う</string>
+    <string name="e">え</string>
+    <string name="o">お</string>
+    <string name="ka">か</string>
+    <string name="ki">き</string>
+    <string name="ku">く</string>
+    <string name="ke">け</string>
+    <string name="ko">こ</string>
+    <string name="sa">さ</string>
+    <string name="shi">し</string>
+    <string name="su">す</string>
+    <string name="se">せ</string>
+    <string name="so">そ</string>
+    <string name="ta">た</string>
+    <string name="chi">ち</string>
+    <string name="tsu">つ</string>
+    <string name="te">て</string>
+    <string name="to">と</string>
+    <string name="na">な</string>
+    <string name="ni">に</string>
+    <string name="nu">ぬ</string>
+    <string name="ne">ね</string>
+    <string name="no">の</string>
+    <string name="ha">は</string>
+    <string name="hi">ひ</string>
+    <string name="fu">ふ</string>
+    <string name="he">へ</string>
+    <string name="ho">ほ</string>
+    <string name="ma">ま</string>
+    <string name="mi">み</string>
+    <string name="mu">む</string>
+    <string name="me">め</string>
+    <string name="mo">も</string>
+    <string name="ya">や</string>
+    <string name="yu">ゆ</string>
+    <string name="yo">よ</string>
+    <string name="ra">ら</string>
+    <string name="ri">り</string>
+    <string name="ru">る</string>
+    <string name="re">れ</string>
+    <string name="ro">ろ</string>
+    <string name="wa">わ</string>
+    <string name="wo">を</string>
+    <string name="n">ん</string>
+    <string name="skip">Skip</string>
+
 </resources>

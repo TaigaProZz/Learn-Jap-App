@@ -16,11 +16,6 @@ import fr.taigaprozz.kanjikana.Quiz.Quiz;
 
 
 public class MainActivity extends AppCompatActivity {
-    private ImageView kana_start;
-    private ImageView kanji_start;
-    private ImageView quiz_start;
-    private ImageView kana_start_5;
-
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -30,36 +25,33 @@ public class MainActivity extends AppCompatActivity {
 
 
         // start hiragana activity with the button
-        this.kana_start = findViewById(R.id.hiragana_button);
+        ImageView kana_start = findViewById(R.id.hiragana_button);
         kana_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent otherActivity = new Intent(getApplicationContext(), HiraganaActivity.class);
-                startActivity(otherActivity);
                 finish();
+                startActivity(new Intent(getApplicationContext(), HiraganaActivity.class));
             }
         });
 
         // start katakana activity with the button
-        this.kanji_start = findViewById(R.id.katakana_button);
+        ImageView kanji_start = findViewById(R.id.katakana_button);
         kanji_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent otherActivity2 = new Intent(getApplicationContext(), KatakanaActivity.class);
-                startActivity(otherActivity2);
                 finish();
-
+                startActivity(new Intent(getApplicationContext(), KatakanaActivity.class));
             }
         });
 
         // start quiz activity with the button
-        this.quiz_start = findViewById(R.id.numbers_start);
+        ImageView quiz_start = findViewById(R.id.quiz_start);
         quiz_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent otherActivity3 = new Intent(getApplicationContext(), Quiz.class);
-                startActivity(otherActivity3);
+                Intent intent = new Intent(getApplicationContext(), Quiz.class);
                 finish();
+                startActivity(intent);
             }
         });
     }

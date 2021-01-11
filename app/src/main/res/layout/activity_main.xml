@@ -34,7 +34,7 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/numbers_start"
+        android:id="@+id/quiz_start"
         android:layout_width="150dp"
         android:layout_height="135dp"
         android:layout_marginTop="372dp"
