@@ -3,14 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/black_grey">
 
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_katakana"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/toolbar_bg"
+        android:background="@color/dark_grey"
         app:title=" "
         tools:ignore="MissingConstraints">
 
@@ -19,55 +20,57 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/backArrow"
+                android:id="@+id/goingBackArrow"
                 android:layout_width="36dp"
                 android:layout_height="65dp"
                 android:text="@string/back"
-                android:textColor="@color/blanc_gris"
                 android:textSize="40sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="74dp"
-                android:layout_height="45dp"
+                android:layout_width="123dp"
+                android:layout_height="64dp"
                 android:layout_gravity="center"
-                android:gravity="center_horizontal"
+                android:layout_marginStart="12dp"
+                android:paddingRight="40dp"
+                android:gravity="center"
                 android:text="@string/quiz"
-                android:textColor="@color/blanc_gris"
+                android:textColor="@color/white"
                 android:textSize="22sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/backArrow"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/button_katakana_quiz"
-                android:layout_width="106dp"
-                android:layout_height="52dp"
-                android:layout_gravity="center"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/button_bg"
-                android:text="@string/button_katakana"
-                android:textColor="@color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/goingBackArrow"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.461" />
+                app:layout_constraintVertical_bias="0.478" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.appcompat.widget.Toolbar>
 
 
     <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/text_revis"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_katakana" />
+
+    <TextView
         android:id="@+id/hiragana_lettre_quiz"
-        android:src="@drawable/hiragana_ni"
         android:layout_width="91dp"
         android:layout_height="125dp"
         android:layout_marginTop="148dp"
         android:gravity="center"
         android:text="@string/n_katakana"
+        android:textColor="@color/white"
         android:textSize="74sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,7 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="412dp"
         android:gravity="center"
-        android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz  "
+        android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
         android:hint="@string/reponse_quiz_hint"
         android:freezesText="true"
         android:imeOptions="actionDone"
@@ -91,15 +94,46 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/good_answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bonne_reponse"
+        android:textColor="@color/green"
+        android:textSize="18sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/editTextAnswer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hiragana_lettre_quiz"
+        app:layout_constraintVertical_bias="0.517" />
+
+    <TextView
+        android:id="@+id/wrong_answer"
+        android:layout_width="183dp"
+        android:layout_height="70dp"
+        android:gravity="center_horizontal"
+        android:text="@string/mauvaise_reponse"
+        android:textColor="@color/red"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextAnswer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hiragana_lettre_quiz"
+        app:layout_constraintVertical_bias="0.25" />
+
     <Button
-        android:id="@+id/buttonValide"
+        android:id="@+id/buttonValidate"
         android:layout_width="59dp"
         android:layout_height="54dp"
         android:layout_marginTop="344dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/button_valide_bg"
+        android:background="@drawable/background_button_rectangle_purple200"
+        android:shadowRadius="@android:integer/config_longAnimTime"
         android:text="@string/valide"
-        android:textColor="@color/green"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.743"
         app:layout_constraintStart_toEndOf="@+id/editTextAnswer"
@@ -107,14 +141,43 @@
 
     <Button
         android:id="@+id/buttonSkip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="412dp"
+        android:layout_width="81dp"
+        android:layout_height="66dp"
+        android:layout_marginBottom="4dp"
+        android:background="@null"
         android:text="@string/skip"
-        app:layout_constraintEnd_toStartOf="@+id/editTextAnswer"
-        app:layout_constraintHorizontal_bias="0.372"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonValidate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.367"
+        app:layout_constraintStart_toEndOf="@+id/editTextAnswer"
+        tools:ignore="MissingConstraints" />
 
+    <Button
+        android:id="@+id/button_hiragana_quiz"
+        android:layout_width="106dp"
+        android:layout_height="52dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_button_rectangle_purple200"
+        android:text="@string/button_hiragana"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/button_katakana_quiz"
+        android:layout_width="106dp"
+        android:layout_height="52dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/background_button_rectangle_purple200"
+        android:text="@string/button_katakana"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

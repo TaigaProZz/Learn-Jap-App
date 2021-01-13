@@ -6,12 +6,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wallpaper_main"
-    android:orientation="vertical">
+    android:background="@color/black_grey"
+    android:orientation="vertical"
+
+ >
 
 
-    <androidx.appcompat.widget.Toolbar
-        android:background="@drawable/toolbar_bg"
+<androidx.appcompat.widget.Toolbar
+    android:background="@color/dark_grey"
         android:id="@+id/toolbar_katakana"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,58 +24,69 @@
             android:layout_height="match_parent" >
 
             <TextView
-                android:id="@+id/retour_arriere"
+                android:id="@+id/goingBackArrow"
                 android:layout_width="36dp"
                 android:layout_height="65dp"
                 android:text="@string/back"
                 android:textSize="40sp"
-                android:textColor="@color/blanc_gris"
+                android:textStyle="bold"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:textColor="@color/blanc_gris"
                 android:id="@+id/textView2"
-                android:layout_width="112dp"
-                android:layout_height="42dp"
+                android:layout_width="123dp"
+                android:layout_height="64dp"
                 android:layout_gravity="center"
-                android:gravity="center_horizontal"
+                android:layout_marginStart="12dp"
+                android:gravity="center"
                 android:text="@string/katakana"
+                android:textColor="@color/white"
                 android:textSize="22sp"
-                app:layout_constraintTop_toTopOf="parent"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/retour_arriere"
-                />
+                app:layout_constraintStart_toEndOf="@+id/goingBackArrow"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.478" />
 
-            <Button
-                android:id="@+id/button_hiragana"
-                android:layout_width="106dp"
-                android:layout_height="52dp"
-                android:layout_gravity="center"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/button_bg"
-                android:text="@string/button_hiragana"
-                android:textColor="@color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.461" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.appcompat.widget.Toolbar>
 
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <Button
+        android:id="@+id/button_hiragana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/background_button_rectangle_purple200"
+        android:text="@string/button_hiragana"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/katakana_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:orientation="vertical"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
-        android:orientation="vertical"
-        android:id="@+id/katakana_recyclerview"
+        android:paddingBottom="@dimen/activity_vertical_margin"
         android:scrollbars="vertical" />
-
-
 
 
 </LinearLayout>

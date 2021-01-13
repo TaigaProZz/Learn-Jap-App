@@ -2,6 +2,7 @@ package fr.taigaprozz.kanjikana.Kana;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -27,7 +28,13 @@ public class KatakanaActivity extends AppCompatActivity {
         // collect components from view
         setSupportActionBar(findViewById(R.id.toolbar_katakana));
         Button button = findViewById(R.id.button_hiragana);
-        TextView retour_arriere = findViewById(R.id.retour_arriere);
+        TextView goingBackArrow = findViewById(R.id.goingBackArrow);
+
+        // return button arrow at the top left
+        goingBackArrow.setOnClickListener(v -> {
+            finish();
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        });
 
 
         // click button switch to hiragana
@@ -78,11 +85,7 @@ public class KatakanaActivity extends AppCompatActivity {
         kanaAdapter = new KanaAdapter(listeKana);
         recyclerView.setAdapter(kanaAdapter);
 
-        // return button arrow at the top left
-        retour_arriere.setOnClickListener(v -> {
-            finish();
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-        });
+
 
     }
 

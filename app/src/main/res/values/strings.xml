@@ -14,7 +14,6 @@
     <string name="retour">Retour</string>
     <string name="back"><![CDATA[←]]></string>
     <string name="app_name_menu">nom à définir</string>
-
     <string name="BACK"><![CDATA[<]]></string>
     <string name="button_katakana">katakana</string>
     <string name="button_hiragana">hiragana</string>
@@ -26,14 +25,13 @@
     <string name="tab_text_2">Katakana</string>
     <string name="title_activity_tabbed">TabbedActivity</string>
     <string name="title_activity_main">MainActivity</string>
-
-    <string name="n_katakana"> </string>
     <string name="reponse_quiz_hint">Réponse :</string>
     <string name="valide">✓</string>
-    <string name="description_kana">
-        "\nL'écriture japonaise est composée de 4 écritures différentes :"
-        "\nHiragana, Katakana, Kanji, Rōmaji.\n"
-        "\nIci, nous allons voir les Hiraganas et Katakanas :" </string>
-    <string name="skip">Skip</string>
+    <string name="skip">→</string>
+    <string name="n_katakana"> </string>
+    <string name="bonne_reponse">Bonne réponse !</string>
+    <string name="mauvaise_reponse">Mauvaise réponse !</string>
+    <string name="text_revis">Pour réviser ses kana :</string>
+
 
 </resources>

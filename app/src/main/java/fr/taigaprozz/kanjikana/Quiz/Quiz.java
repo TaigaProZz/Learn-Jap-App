@@ -1,10 +1,13 @@
 package fr.taigaprozz.kanjikana.Quiz;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,11 +16,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Random;
 
 import fr.taigaprozz.R;
+import fr.taigaprozz.kanjikana.Kana.HiraganaActivity;
+import fr.taigaprozz.kanjikana.Kana.KatakanaActivity;
 import fr.taigaprozz.kanjikana.MainActivity;
 
 
 public class Quiz extends AppCompatActivity {
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,10 +31,15 @@ public class Quiz extends AppCompatActivity {
 
         // collect components in layout
         EditText editTextReponseUser = findViewById(R.id.editTextAnswer);
-        Button boutonValide = findViewById(R.id.buttonValide);
+        Button validateButton = findViewById(R.id.buttonValidate);
         Button buttonSkip = findViewById(R.id.buttonSkip);
         TextView textViewHiragana = findViewById(R.id.hiragana_lettre_quiz);
-        TextView backArrow = findViewById(R.id.backArrow);
+        TextView backArrow = findViewById(R.id.goingBackArrow);
+        TextView textGoodAnswer = findViewById(R.id.good_answer);
+        TextView textWrongAnswer = findViewById(R.id.wrong_answer);
+        Button imageHiraganaSwitch = findViewById(R.id.button_hiragana_quiz);
+        Button imageKatakanaSwitch = findViewById(R.id.button_katakana_quiz);
+
 
         // return button arrow
         backArrow.setOnClickListener(v -> {
@@ -63,36 +74,77 @@ public class Quiz extends AppCompatActivity {
                 "wa", "wo",
                 "n"  };
 
-        // choise a random hiragana in hiragana list and latin letter list
+        // choose a random hiragana in hiragana list and latin letter list
         Random random = new Random();
-        int randomNumber = random.nextInt(hiraganaList.length - 1);
-        final String[] choiseRandomHiragana = {hiraganaList[randomNumber]};
-        final String[] choiseRandomRomaji = {latinLetterList[randomNumber]};
+        final int[] randomNumber = {random.nextInt(hiraganaList.length - 1)};
+        final String[] choiseRandomHiragana = {hiraganaList[randomNumber[0]]};
+        final String[] choiseRandomRomaji = {latinLetterList[randomNumber[0]]};
         textViewHiragana.setText(choiseRandomHiragana[0]);
 
-        // skip button with click listener
-        buttonSkip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Random random = new Random();
-                int randomNumber = random.nextInt(hiraganaList.length - 1);
-                choiseRandomHiragana[0] = hiraganaList[randomNumber];
-                choiseRandomRomaji[0] = latinLetterList[randomNumber];
-                textViewHiragana.setText(choiseRandomHiragana[0]);
-            }
-        });
+        // button skip is inivisible while button validate is not pressed
+        buttonSkip.setVisibility(View.INVISIBLE);
+        // set text wrong and good answer to invisible
+        textGoodAnswer.setVisibility(View.INVISIBLE);
+        textWrongAnswer.setVisibility(View.INVISIBLE);
 
         // validate button with click listener
-        boutonValide.setOnClickListener(v -> {
+        validateButton.setOnClickListener(v -> {
                 // print in console
                 System.out.println("la reponse de l'user :" + editTextReponseUser.getText().toString() + " la bonne reponse : " + choiseRandomRomaji[0]);
 
+                // check if the text is not empty
+                if(editTextReponseUser.getText().length() <=0){
+                    Toast.makeText(getApplicationContext(), "Rentres une réponse !", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 // check if the answer of user is correct
                 if (editTextReponseUser.getText().toString().equals(choiseRandomRomaji[0])){
-                    Toast.makeText(getApplicationContext(), "Bravo ! La réponse était " + '"' + choiseRandomRomaji[0] + '"', Toast.LENGTH_SHORT).show();
+                    // set visibility of good answer to visible
+                    textGoodAnswer.setVisibility(View.VISIBLE);
+
                 }
-                else{Toast.makeText(getApplicationContext(), "C'est faux ! La bonne réponse était " + '"' + choiseRandomRomaji[0] + '"', Toast.LENGTH_SHORT).show();
+                else {
+                    // set visibility of wrong answer to visible
+                    textWrongAnswer.setText("Mauvaise réponse ! La réponse était " + choiseRandomRomaji[0]);
+                    textWrongAnswer.setVisibility(View.VISIBLE);
                 }
+
+                // set the visibility of the skip button to VISIBLE when validate button is pressed
+                buttonSkip.setVisibility(View.VISIBLE);
+                // and set validate button to invisible
+                validateButton.setVisibility(View.INVISIBLE);
+                // clear the text of the user when validate button is pressed
+                editTextReponseUser.getText().clear();
+            });
+        // switch to hiragana activity with button
+        imageHiraganaSwitch.setOnClickListener(v-> {
+            finish();
+            startActivity(new Intent(getApplicationContext(), HiraganaActivity.class));
+        });
+
+        // switch to katakana activity with button
+        imageKatakanaSwitch.setOnClickListener(v -> {
+            finish();
+            startActivity(new Intent(getApplicationContext(), KatakanaActivity.class));
+        });
+
+
+
+        // skip button with click listener
+        buttonSkip.setOnClickListener(v -> {
+            // set visibility to good or wrong answer to invisible
+            textGoodAnswer.setVisibility(View.INVISIBLE);
+            textWrongAnswer.setVisibility(View.INVISIBLE);
+            // choose again a random hiragana
+            randomNumber[0] = random.nextInt(hiraganaList.length - 1);
+            choiseRandomHiragana[0] = hiraganaList[randomNumber[0]];
+            choiseRandomRomaji[0] = latinLetterList[randomNumber[0]];
+            textViewHiragana.setText(choiseRandomHiragana[0]);
+
+            // set visibility to the button skip to invisible when pressed and set validate button to visible
+            buttonSkip.setVisibility(View.INVISIBLE);
+            validateButton.setVisibility(View.VISIBLE);
         });
 
     }

@@ -23,9 +23,17 @@ public class HiraganaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hiragana);
-        setSupportActionBar((findViewById(R.id.toolbar_hiragana)));
-        TextView retour_arriere = findViewById(R.id.retour_arriere);
+
+        // collect components from layout
+        setSupportActionBar(findViewById(R.id.toolbar_hiragana));
+        TextView goingBackArrow = findViewById(R.id.goingBackArrow);
         Button buttonSwitchKatakana = findViewById(R.id.button_katakana);
+
+        // return button at top left
+        goingBackArrow.setOnClickListener(v -> {
+            finish();
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        });
 
         // button page to katakana
         buttonSwitchKatakana.setOnClickListener(v -> {
@@ -72,12 +80,6 @@ public class HiraganaActivity extends AppCompatActivity {
         // set adapter to recycler view
         KanaAdapter kanaAdapter = new KanaAdapter(listeKana);
         recyclerView.setAdapter(kanaAdapter);
-
-        // return button at top left
-        retour_arriere.setOnClickListener(v -> {
-            finish();
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-        });
     }
 
     // return button of the phone

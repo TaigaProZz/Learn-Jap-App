@@ -17,7 +17,6 @@ import fr.taigaprozz.kanjikana.Quiz.Quiz;
 
 public class MainActivity extends AppCompatActivity {
 
-    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,12 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
         // start hiragana activity with the button
         ImageView hiraganaActivityImageMain = findViewById(R.id.hiragana_button);
-        hiraganaActivityImageMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        hiraganaActivityImageMain.setOnClickListener(v -> {
                 finish();
                 startActivity(new Intent(getApplicationContext(), HiraganaActivity.class));
-            }
         });
 
         // start katakana activity with the button
