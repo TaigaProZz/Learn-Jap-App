@@ -8,7 +8,7 @@
     <string name="kana_default_name">Kana</string>
     <string name="nom_kana">15sp</string>
     <string name="title_activity_kana_scroll">ScrollingActivity</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">⚙︎</string>
     <string name="todo">TODO</string>
     <string name="title_activity_scrolling">Kana</string>
     <string name="retour">Retour</string>
@@ -32,6 +32,18 @@
     <string name="bonne_reponse">Bonne réponse !</string>
     <string name="mauvaise_reponse">Mauvaise réponse !</string>
     <string name="text_revis">Pour réviser ses kana :</string>
-
-
+    <string name="test_quiz">Choix du Quiz</string>
+    <string name="choix_niveau">Choix Niveau</string>
+    <string name="hiragana_niveau_1">Hiragana
+        Niveau 1</string>
+    <string name="hiragana_niveau_2">Hiragana Niveau 2</string>
+    <string name="hiragana_niveau_3">Hiragana
+        Niveau 3</string>
+    <string name="katakana_niveau_1">Katakana
+        Niveau 1</string>
+    <string name="katakana_niveau_2">Katakana
+        Niveau 2</string>
+    <string name="katakana_niveau_3">Katakana
+        Niveau 3</string>
+    <string name="help">?</string>
 </resources>

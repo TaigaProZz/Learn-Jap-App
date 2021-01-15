@@ -15,6 +15,7 @@
         app:title=" "
         tools:ignore="MissingConstraints">
 
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -48,6 +49,18 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.478" />
 
+
+            <ImageView
+                android:id="@+id/settings_level"
+                android:layout_width="72dp"
+                android:layout_height="61dp"
+                android:src="@drawable/settings_2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.appcompat.widget.Toolbar>
@@ -65,8 +78,8 @@
 
     <TextView
         android:id="@+id/hiragana_lettre_quiz"
-        android:layout_width="91dp"
-        android:layout_height="125dp"
+        android:layout_width="175dp"
+        android:layout_height="135dp"
         android:layout_marginTop="148dp"
         android:gravity="center"
         android:text="@string/n_katakana"
