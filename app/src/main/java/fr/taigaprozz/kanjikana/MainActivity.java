@@ -40,5 +40,12 @@ public class MainActivity extends AppCompatActivity {
             finish();
             startActivity(new Intent(getApplicationContext(), SettingsQuiz.class));
         });
+
+        ImageView settingsApp = findViewById(R.id.settings_app);
+        settingsApp.setOnClickListener(v -> {
+            finish();
+            startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
+        });
+
     }
 }

@@ -26,6 +26,12 @@ public class SettingsQuiz extends AppCompatActivity {
         Button katakanaLevel1 = findViewById(R.id.katakana_level1);
         Button katakanaLevel2 = findViewById(R.id.katakana_level2);
         Button katakanaLevel3 = findViewById(R.id.katakana_level3);
+        TextView help = findViewById(R.id.help_quiz);
+
+        help.setOnClickListener(v -> {
+            finish();
+            startActivity(new Intent(getApplicationContext(), HelpQuiz.class));
+        });
 
         hiraganaLevel1.setOnClickListener(v -> {
             finish();
@@ -68,5 +74,12 @@ public class SettingsQuiz extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
         });
 
+    }
+
+    // return button of the phone
+    @Override
+    public void onBackPressed() {
+        finish();
+        startActivity(new Intent(getApplicationContext(), MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
     }
 }

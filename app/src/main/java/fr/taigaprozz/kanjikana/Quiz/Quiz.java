@@ -100,9 +100,17 @@ public class Quiz extends AppCompatActivity {
                 "ダ", "ヂ", "ヅ", "デ", "ド",
                 "バ", "ビ", "ブ", "ベ", "ボ",
                 "パ", "ピ", "プ", "ペ", "ポ",
-                "キャ", "キュ", 	"キョ",
-                "ギャ",	"ギュ", 	"ギョ",
-                "シャ",	"シュ", 	"ショ",
+                "キャ", "キュ", "キョ",
+                "ギャ",	"ギュ", "ギョ",
+                "シャ",	"シュ", "ショ",
+                "ジャ", "ジュ", "ジョ",
+                "チャ", "チュ", "チョ",
+                "ニャ",	"ニュ", "ニョ",
+                "ヒャ", "ヒュ", "ヒョ",
+                "ビャ",	"ビュ", "ビョ",
+                "ピャ",	"ピュ", "ピョ",
+                "ミャ",	"ミュ", "ミョ",
+                "リャ",	"リュ", "リョ"
 
 
 
@@ -522,6 +530,8 @@ public class Quiz extends AppCompatActivity {
         imageSettings.setOnClickListener(v -> {
             finish();
             startActivity(new Intent(getApplicationContext(), SettingsQuiz.class));
+            Levels.getInstance().setLevel_hiragana(0);
+            Levels.getInstance().setLevel_katakana(0);
         });
     }
 
@@ -529,9 +539,9 @@ public class Quiz extends AppCompatActivity {
     // return button of the phone
     @Override
     public void onBackPressed() {
-        Intent i = new Intent(Quiz.this, MainActivity.class);
-        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(i);
         finish();
+        startActivity(new Intent(getApplicationContext(), SettingsQuiz.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+        Levels.getInstance().setLevel_hiragana(0);
+        Levels.getInstance().setLevel_katakana(0);
     }
 }

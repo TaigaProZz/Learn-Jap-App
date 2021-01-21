@@ -42,18 +42,20 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:layout_width="54dp"
-                android:layout_height="47dp"
-                android:layout_marginStart="300dp"
+                android:id="@+id/help_quiz"
+                android:layout_width="57dp"
+                android:layout_height="46dp"
+                android:layout_marginStart="284dp"
                 android:background="@drawable/background_circle"
                 android:gravity="center"
                 android:text="@string/help"
                 android:textColor="@color/black_grey"
-                android:textSize="22sp"
+                android:textSize="19sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/goingBackArrow"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.473" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
