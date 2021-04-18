@@ -15,6 +15,8 @@ import java.util.List;
 
 import fr.taigaprozz.R;
 import fr.taigaprozz.kanjikana.MainActivity;
+import fr.taigaprozz.kanjikana.Quiz.Quiz;
+import fr.taigaprozz.kanjikana.Quiz.SettingsQuiz;
 
 
 public class HiraganaActivity extends AppCompatActivity {
@@ -28,6 +30,7 @@ public class HiraganaActivity extends AppCompatActivity {
         setSupportActionBar(findViewById(R.id.toolbar_hiragana));
         TextView goingBackArrow = findViewById(R.id.goingBackArrow);
         Button buttonSwitchKatakana = findViewById(R.id.button_katakana);
+        Button buttonToQuiz = findViewById(R.id.button_quiz);
 
         // return button at top left
         goingBackArrow.setOnClickListener(v -> {
@@ -39,6 +42,12 @@ public class HiraganaActivity extends AppCompatActivity {
         buttonSwitchKatakana.setOnClickListener(v -> {
             finish();
             startActivity(new Intent(getApplicationContext(), KatakanaActivity.class));
+        });
+
+        // button page to katakana
+        buttonToQuiz.setOnClickListener(v -> {
+            finish();
+            startActivity(new Intent(getApplicationContext(), SettingsQuiz.class));
         });
 
         // image list of hiragana

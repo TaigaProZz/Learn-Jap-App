@@ -16,6 +16,7 @@ import java.util.List;
 
 import fr.taigaprozz.R;
 import fr.taigaprozz.kanjikana.MainActivity;
+import fr.taigaprozz.kanjikana.Quiz.SettingsQuiz;
 
 
 public class KatakanaActivity extends AppCompatActivity {
@@ -29,6 +30,7 @@ public class KatakanaActivity extends AppCompatActivity {
         setSupportActionBar(findViewById(R.id.toolbar_katakana));
         Button button = findViewById(R.id.button_hiragana);
         TextView goingBackArrow = findViewById(R.id.goingBackArrow);
+        Button buttonQuiz = findViewById(R.id.button_quiz);
 
         // return button arrow at the top left
         goingBackArrow.setOnClickListener(v -> {
@@ -41,6 +43,12 @@ public class KatakanaActivity extends AppCompatActivity {
         button.setOnClickListener(v -> {
             finish();
             startActivity(new Intent(getApplicationContext(), HiraganaActivity.class));
+
+        });
+
+        buttonQuiz.setOnClickListener(v ->{
+            finish();
+            startActivity(new Intent(getApplicationContext(), SettingsQuiz.class));
 
         });
 
