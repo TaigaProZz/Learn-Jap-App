@@ -1,0 +1,89 @@
+<resources>
+    <string name="app_name">Kana et Kanji</string>
+    <string name="hiragana">Hiragana</string>
+    <string name="katakana">Katakana</string>
+    <string name="quiz">Quiz</string>
+    <string name="kanji">Kanji</string>
+    <string name="nom_de_l_appli">Nom de l\'appli</string>
+    <string name="kana_default_name">Kana</string>
+    <string name="nom_kana">15sp</string>
+    <string name="title_activity_kana_scroll">ScrollingActivity</string>
+    <string name="action_settings">⚙︎</string>
+    <string name="todo">TODO</string>
+    <string name="title_activity_scrolling">Kana</string>
+    <string name="retour">Retour</string>
+    <string name="back"><![CDATA[←]]></string>
+    <string name="app_name_menu">nom à définir</string>
+    <string name="BACK"><![CDATA[<]]></string>
+    <string name="button_katakana">katakana</string>
+    <string name="button_hiragana">hiragana</string>
+    <string name="nothing">  </string>
+    <string name="title_activity_kana">KanaActivity</string>
+    <string name="title_activity_hiragana">Hiragana</string>
+    <string name="title_activity_katakana">Katakana</string>
+    <string name="tab_text_1">Hiragana</string>
+    <string name="tab_text_2">Katakana</string>
+    <string name="title_activity_tabbed">TabbedActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="reponse_quiz_hint">Réponse :</string>
+    <string name="valide">✓</string>
+    <string name="skip">→</string>
+    <string name="n_katakana"> </string>
+    <string name="bonne_reponse">Bonne réponse !</string>
+    <string name="mauvaise_reponse">Mauvaise réponse !</string>
+    <string name="text_revis">Pour réviser ses kana :</string>
+    <string name="test_quiz">Choix du Quiz</string>
+    <string name="choix_niveau">Choix Niveau</string>
+    <string name="hiragana_niveau_1">Hiragana
+        Niveau 1</string>
+    <string name="hiragana_niveau_2">Hiragana Niveau 2</string>
+    <string name="hiragana_niveau_3">Hiragana
+        Niveau 3</string>
+    <string name="katakana_niveau_1">Katakana
+        Niveau 1</string>
+    <string name="katakana_niveau_2">Katakana
+        Niveau 2</string>
+    <string name="katakana_niveau_3">Katakana
+        Niveau 3</string>
+    <string name="help">?</string>
+
+    <string name="niveau_1_hiragana_text"><u>Niveau 1</u>: \n \n
+        - kana <b>basiques</b>\n
+        「<i>Gojūon</i> | 五十音」(あ, に , よ, …)</string>
+
+    <string name="niveau_2_hiragana_text"><u>Niveau 2</u>: \n \n
+        - kana <b>basiques</b>\n
+        「 <i>Gojūon</i> | 五十音 」(あ, に , よ, …) \n \n
+        - sons <b>troubles</b>\n
+        「 <i>Dakuon | 濁音</i> 」( ず,ズ, …) \n \n
+        - sons <b>semi-troubles</b>\n
+        「 <i>Handakuon</i> | 半濁音 」 ( ぴ,ピ, …) </string>
+
+    <string name="niveau_3_hiragana_text"><u>Niveau 3</u>:
+    \n \n
+    - kana <b>basiques</b>\n
+    「 <i>Gojūon</i> | 五十音 」(あ, に , よ, …) \n \n
+    - sons <b>troubles</b>\n
+    「 <i>Dakuon | 濁音</i> 」( ず,ズ, …) \n \n
+    - sons <b>semi-troubles</b>\n
+        「 <i>Handakuon</i> | 半濁音 」 ( ぴ,ピ, …) \n \n
+    - sons <b>composés</b>\n
+       「 <i>Yōon</i> | 拗音 」 ( きゃ, じゅ, ぴょ, …)\n \n
+    </string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Changer de theme</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+</resources>
