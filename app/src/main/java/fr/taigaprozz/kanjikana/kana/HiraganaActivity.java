@@ -1,4 +1,4 @@
-package fr.taigaprozz.kanjikana.Kana;
+package fr.taigaprozz.kanjikana.kana;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,9 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.taigaprozz.R;
-import fr.taigaprozz.kanjikana.MainActivity;
-import fr.taigaprozz.kanjikana.Quiz.Quiz;
-import fr.taigaprozz.kanjikana.Quiz.SettingsQuiz;
+import fr.taigaprozz.kanjikana.main.MainActivity;
+import fr.taigaprozz.kanjikana.quiz.SettingsQuiz;
 
 
 public class HiraganaActivity extends AppCompatActivity {

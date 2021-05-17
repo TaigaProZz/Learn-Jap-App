@@ -1,4 +1,4 @@
-package fr.taigaprozz.kanjikana.Quiz;
+package fr.taigaprozz.kanjikana.quiz;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -15,9 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Random;
 
 import fr.taigaprozz.R;
-import fr.taigaprozz.kanjikana.Kana.HiraganaActivity;
-import fr.taigaprozz.kanjikana.Kana.KatakanaActivity;
-import fr.taigaprozz.kanjikana.MainActivity;
+import fr.taigaprozz.kanjikana.kana.HiraganaActivity;
+import fr.taigaprozz.kanjikana.kana.KatakanaActivity;
 
 
 public class Quiz extends AppCompatActivity {
@@ -212,7 +211,6 @@ public class Quiz extends AppCompatActivity {
                 choiseRandomHiraganaLevel1[0] = hiraganaList[randomNumber[0]];
                 choiseRandomRomaji1[0] = latinLetterList[randomNumber[0]];
                 textViewKana.setText(choiseRandomHiraganaLevel1[0]);
-                System.out.println("taille" + (hiraganaList.length - 58));
 
                 // set visibility to the button skip to invisible when pressed and set validate button to visible
                 buttonSkip.setVisibility(View.INVISIBLE);

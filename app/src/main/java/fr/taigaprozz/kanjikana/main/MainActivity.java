@@ -1,4 +1,4 @@
-package fr.taigaprozz.kanjikana;
+package fr.taigaprozz.kanjikana.main;
 
 
 import android.content.Intent;
@@ -9,9 +9,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import fr.taigaprozz.R;
-import fr.taigaprozz.kanjikana.Kana.HiraganaActivity;
-import fr.taigaprozz.kanjikana.Kana.KatakanaActivity;
-import fr.taigaprozz.kanjikana.Quiz.SettingsQuiz;
+import fr.taigaprozz.kanjikana.kana.HiraganaActivity;
+import fr.taigaprozz.kanjikana.kana.KatakanaActivity;
+import fr.taigaprozz.kanjikana.quiz.SettingsQuiz;
 
 
 public class MainActivity extends AppCompatActivity {

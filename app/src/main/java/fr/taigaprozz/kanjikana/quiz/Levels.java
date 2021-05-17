@@ -1,4 +1,4 @@
-package fr.taigaprozz.kanjikana.Quiz;
+package fr.taigaprozz.kanjikana.quiz;
 
 public class Levels {
     private static final Levels levels = new Levels();

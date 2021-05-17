@@ -1,16 +1,12 @@
-package fr.taigaprozz.kanjikana;
+package fr.taigaprozz.kanjikana.main;
 
 import android.os.Bundle;
-import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.SwitchPreference;
-
-import org.w3c.dom.Text;
 
 import fr.taigaprozz.R;
 

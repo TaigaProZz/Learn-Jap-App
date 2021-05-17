@@ -1,4 +1,4 @@
-package fr.taigaprozz.kanjikana.Kana;
+package fr.taigaprozz.kanjikana.kana;
 
 public class Kana {
 

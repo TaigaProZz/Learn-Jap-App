@@ -13,7 +13,7 @@
     <string name="title_activity_scrolling">Kana</string>
     <string name="retour">Retour</string>
     <string name="back"><![CDATA[←]]></string>
-    <string name="app_name_menu">nom à définir</string>
+    <string name="app_name_menu">Kana \n et \n Kanji</string>
     <string name="BACK"><![CDATA[<]]></string>
     <string name="button_katakana">katakana</string>
     <string name="button_hiragana">hiragana</string>

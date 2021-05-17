@@ -5,30 +5,29 @@
     <application
         android:allowBackup="true"
         android:banner="@drawable/wallpaper_main"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ico"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ico"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity
-            android:name=".kanjikana.SettingsActivity"
-            android:label="@string/title_activity_settings"></activity>
-        <activity android:name=".kanjikana.Quiz.HelpQuiz" />
-        <activity android:name=".kanjikana.Quiz.SettingsQuiz" />
-        <activity android:name=".kanjikana.Kana.KanaAdapter" />
-        <activity android:name=".kanjikana.Kana.KatakanaActivity" />
-        <activity
-            android:name=".kanjikana.Kana.HiraganaActivity"
-            android:label="@string/title_activity_scrolling"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".kanjikana.Quiz.Quiz" />
-        <activity android:name=".kanjikana.Kanji.KanjiActivity" />
-        <activity android:name=".kanjikana.MainActivity">
+        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+        <activity android:name=".kanjikana.account.RegisterActivity" />
+        <activity android:name=".kanjikana.account.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".kanjikana.main.SettingsActivity"
+            android:label="@string/title_activity_settings" />
+        <activity android:name=".kanjikana.quiz.HelpQuiz" />
+        <activity android:name=".kanjikana.quiz.SettingsQuiz" />
+        <activity android:name=".kanjikana.kana.KanaAdapter" />
+        <activity android:name=".kanjikana.kana.KatakanaActivity" />
+        <activity android:name=".kanjikana.kana.HiraganaActivity" />
+        <activity android:name=".kanjikana.quiz.Quiz" />
+        <activity android:name=".kanjikana.main.MainActivity">
         </activity>
     </application>
 
