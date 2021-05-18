@@ -32,6 +32,9 @@ class RegisterActivity : AppCompatActivity() {
             if (!email.contains(".")){
                 registerEmail.error = "Un e-mail valide est requis"
             }
+            if (passwordConfirm != password){
+                registerPasswordConfirm.error = "Le mot de passe ne correspond pas"
+            }
 
 
 
