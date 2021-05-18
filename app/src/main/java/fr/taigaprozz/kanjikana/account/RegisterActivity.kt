@@ -18,23 +18,39 @@ class RegisterActivity : AppCompatActivity() {
 
         // collect register data from user when register button is pressed
         buttonRegister.setOnClickListener {
-            var email = registerEmail.text.toString()
-            var password = registerPassword.text.toString()
-            var passwordConfirm = registerPasswordConfirm.text.toString()
+            val email = registerEmail.text.toString()
+            val password = registerPassword.text.toString()
+            val passwordConfirm = registerPasswordConfirm.text.toString()
 
-        // inspect if user complete correctly
+        // inspection of user data for registering
+            // email field is empty
             if (email.isEmpty()){
+                registerEmail.error = "Un e-mail valide est requis" }
+
+            // email field contains " @ " and " . "
+            else if (!email.contains("@")){
                 registerEmail.error = "Un e-mail valide est requis"
             }
-            if (!email.contains("@")){
+            else if (!email.contains(".")){
                 registerEmail.error = "Un e-mail valide est requis"
             }
-            if (!email.contains(".")){
-                registerEmail.error = "Un e-mail valide est requis"
+
+            // password field is empty
+            else if (passwordConfirm.isEmpty()) {
+                registerPassword.error = "Choisissez votre mot de passe"
             }
-            if (passwordConfirm != password){
+            // password and password confirmation are equals
+            else if (passwordConfirm != password){
                 registerPasswordConfirm.error = "Le mot de passe ne correspond pas"
             }
+            // password is a minimum strong
+            else if (passwordConfirm.length < 7){
+                registerPassword.error = "Le mot de passe est trop petit"
+            }
+            else if(password.contentEquals(password.uppercase())){
+                println("maj")
+
+        }
 
 
 
