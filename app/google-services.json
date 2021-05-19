@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "733077726617",
+    "project_id": "kana-app-cdaaf",
+    "storage_bucket": "kana-app-cdaaf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:733077726617:android:37ec246d9511a35d02df08",
+        "android_client_info": {
+          "package_name": "fr.taigaprozz.kanjikana"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "733077726617-enm869dfr6rmk076ntiqinie3ii8dp2s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANV-NYFw5bP8uAw3LZNumOwzYjxbU8vhU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "733077726617-enm869dfr6rmk076ntiqinie3ii8dp2s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

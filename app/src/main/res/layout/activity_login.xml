@@ -20,13 +20,13 @@
 
         android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/email_case"
+        app:layout_constraintBottom_toTopOf="@+id/email_case_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/email_case"
+        android:id="@+id/email_case_login"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
@@ -52,14 +52,14 @@
         android:textColor="@color/white"
         android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/password_case"
+        app:layout_constraintBottom_toTopOf="@+id/password_case_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.263"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
 
-        android:id="@+id/password_case"
+        android:id="@+id/password_case_login"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
