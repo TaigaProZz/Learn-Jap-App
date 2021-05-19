@@ -19,4 +19,6 @@
     <color name="green">#42ff00</color>
     <color name="grey" > #3d3e3d </color>
     <color name="background_case">#5A5A5A</color>
+    <color name="background_light_theme">#FFFFFFFF</color>
+    <color name="background_dark_theme">#424242</color>
 </resources>

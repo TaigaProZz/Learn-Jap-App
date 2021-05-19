@@ -9,7 +9,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ico"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+        android:theme="@style/Theme.KanjiKana.Main.Theme.Light">
         <activity android:name=".kanjikana.account.RegisterActivity" />
         <activity android:name=".kanjikana.account.LoginActivity">
             <intent-filter>
