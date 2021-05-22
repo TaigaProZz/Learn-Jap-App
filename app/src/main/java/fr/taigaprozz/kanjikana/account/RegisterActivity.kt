@@ -1,13 +1,18 @@
 package fr.taigaprozz.kanjikana.account
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import fr.taigaprozz.R
+import fr.taigaprozz.kanjikana.main.MainActivity
+
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
@@ -17,11 +22,17 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_register)
 
         val returnArrow = findViewById<ImageView>(R.id.return_button)
+        returnArrow.setOnClickListener{
+            val intent=Intent(applicationContext, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
         val auth = FirebaseAuth.getInstance()
         val registerEmail = findViewById<EditText>(R.id.emailRegister)
         val registerPassword = findViewById<EditText>(R.id.passwordRegister)
         val registerPasswordConfirm = findViewById<EditText>(R.id.passwordRegisterConfirm)
         val buttonRegister = findViewById<Button>(R.id.registerButton)
+        val googleRegisterButton = findViewById<Button>(R.id.googleRegisterButton)
 
         // collect register data from user when register button is pressed
 
@@ -84,10 +95,32 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
 
-        returnArrow.setOnClickListener{
-            val intent=Intent(applicationContext, LoginActivity::class.java)
-            startActivity(intent)
+
+
+        // google auth
+
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN!!)
+            .requestEmail()
+            .build()
+
+        val mGoogle = GoogleSignIn.getClient(this, gso)
+
+        googleRegisterButton.setOnClickListener{
+           val intent= mGoogle.signInIntent
+            startActivityForResult(intent, 1)
+
         }
+    }
+
+
+    override fun onStart() {
+        super.onStart()
+        val account = GoogleSignIn.getLastSignedInAccount(this)
+        updateUI(account)
+    }
+
+    private fun updateUI(user: GoogleSignInAccount?) {
 
     }
+
 }

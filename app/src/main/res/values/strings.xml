@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Kana et Kanji</string>
+    <string name="app_name">Kana Learn</string>
     <string name="hiragana">Hiragana</string>
     <string name="katakana">Katakana</string>
     <string name="quiz">Quiz</string>

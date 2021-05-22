@@ -33,6 +33,7 @@ class LoginActivity : AppCompatActivity() {
 
             auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this){ task ->
 
+
                 if(task.isSuccessful){
                     val intent = Intent(applicationContext, MainActivity::class.java)
                     startActivity(intent)
@@ -41,12 +42,12 @@ class LoginActivity : AppCompatActivity() {
                     updateUI(user)
                 }
                 else{
-                    Toast.makeText(baseContext, "Connexion impossible",
+                    Toast.makeText(baseContext, "E-mail ou mot de passe incorrect",
                         Toast.LENGTH_SHORT).show()
                     updateUI(null)
                 }
-
             }
+
         }
 
 

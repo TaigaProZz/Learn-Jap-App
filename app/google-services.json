@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "733077726617-u980ger1ga1thhiknkbntkacskel1b48.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fr.taigaprozz.kanjikana",
+            "certificate_hash": "c55cc002781fdaa4da58f09ada624fe671d6ee76"
+          }
+        },
+        {
           "client_id": "733077726617-enm869dfr6rmk076ntiqinie3ii8dp2s.apps.googleusercontent.com",
           "client_type": 3
         }
