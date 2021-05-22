@@ -7,8 +7,12 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import fr.taigaprozz.R;
+import fr.taigaprozz.kanjikana.quiz.GlobalFunctions;
+
+import static fr.taigaprozz.kanjikana.quiz.GlobalFunctions.changeActivityFromText;
 
 public class HelpQuiz extends AppCompatActivity {
+
 
 
     @Override
@@ -18,6 +22,7 @@ public class HelpQuiz extends AppCompatActivity {
 
         TextView backArrow = findViewById(R.id.goingBackArrow);
 
+//      changeActivityFromText(backArrow, getApplicationContext(), SettingsQuiz);
         backArrow.setOnClickListener(v -> {
             finish();
             startActivity(new Intent(getApplicationContext(), SettingsQuiz.class));

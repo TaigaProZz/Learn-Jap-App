@@ -25,26 +25,26 @@ class MainActivity : AppCompatActivity() {
 
         // start hiragana activity with the button
         val hiraganaActivityImageMain = findViewById<TextView>(R.id.hiragana_button)
-        hiraganaActivityImageMain.setOnClickListener { v: View? ->
+        hiraganaActivityImageMain.setOnClickListener {
             finish()
             startActivity(Intent(applicationContext, HiraganaActivity::class.java))
         }
 
         // start katakana activity with the button
         val katakanaActivityMainImage = findViewById<TextView>(R.id.katakana_button)
-        katakanaActivityMainImage.setOnClickListener { v: View? ->
+        katakanaActivityMainImage.setOnClickListener {
             finish()
             startActivity(Intent(applicationContext, KatakanaActivity::class.java))
         }
 
         // start quiz activity with the button
         val quizActivityMainImage = findViewById<TextView>(R.id.quiz_start)
-        quizActivityMainImage.setOnClickListener { v: View? ->
+        quizActivityMainImage.setOnClickListener {
             finish()
             startActivity(Intent(applicationContext, SettingsQuiz::class.java))
         }
         val settingsApp = findViewById<ImageView>(R.id.settings_app)
-        settingsApp.setOnClickListener { v: View? ->
+        settingsApp.setOnClickListener {
             finish()
             startActivity(Intent(applicationContext, SettingsActivity::class.java))
         }

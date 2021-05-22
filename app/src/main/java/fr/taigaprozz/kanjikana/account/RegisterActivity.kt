@@ -22,6 +22,7 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_register)
 
         val returnArrow = findViewById<ImageView>(R.id.return_button)
+
         returnArrow.setOnClickListener{
             val intent=Intent(applicationContext, LoginActivity::class.java)
             startActivity(intent)
