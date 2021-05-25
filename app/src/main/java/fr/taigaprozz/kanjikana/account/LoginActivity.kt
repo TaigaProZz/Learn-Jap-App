@@ -22,13 +22,10 @@ class LoginActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-        val text = findViewById<TextView>(R.id.textView5)
-
         val loginEmail = findViewById<EditText>(R.id.email_case_login)
         val loginPassword = findViewById<EditText>(R.id.password_case_login)
 
         val loginButton = findViewById<Button>(R.id.login_button)
-        val gotoRegisterButton = findViewById<Button>(R.id.registerButtonLogin)
 
         loginButton.setOnClickListener{
             val email = loginEmail.text.toString()
@@ -36,10 +33,8 @@ class LoginActivity : AppCompatActivity() {
 
             auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this){ task ->
 
-
                 if(task.isSuccessful){
-                    val intent = Intent(applicationContext, MainActivity::class.java)
-                    startActivity(intent)
+                    startActivity(Intent(applicationContext, MainActivity::class.java))
                     finish()
                     val user = auth.currentUser
                     updateUI(user)
@@ -50,13 +45,11 @@ class LoginActivity : AppCompatActivity() {
                     updateUI(null)
                 }
             }
-
         }
 
+        findViewById<Button>(R.id.registerButtonLogin).setOnClickListener {
+            startActivity(Intent(applicationContext, RegisterActivity::class.java))
 
-        gotoRegisterButton.setOnClickListener {
-            val intent = Intent(applicationContext, RegisterActivity::class.java)
-            startActivity(intent)
         }
     }
     private fun updateUI(user: FirebaseUser?) {

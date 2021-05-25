@@ -11,7 +11,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import fr.taigaprozz.R
-import fr.taigaprozz.kanjikana.main.MainActivity
+
+import fr.taigaprozz.kanjikana.quiz.GlobalFunctions
 
 
 class RegisterActivity : AppCompatActivity() {
@@ -23,10 +24,11 @@ class RegisterActivity : AppCompatActivity() {
 
         val returnArrow = findViewById<ImageView>(R.id.return_button)
 
-        returnArrow.setOnClickListener{
-            val intent=Intent(applicationContext, LoginActivity::class.java)
-            startActivity(intent)
-        }
+
+     //returnArrow.setOnClickListener{
+     //    val intent=Intent(applicationContext, LoginActivity::class.java)
+     //    startActivity(intent)
+     //}
 
         val auth = FirebaseAuth.getInstance()
         val registerEmail = findViewById<EditText>(R.id.emailRegister)
@@ -111,6 +113,9 @@ class RegisterActivity : AppCompatActivity() {
             startActivityForResult(intent, 1)
 
         }
+
+        GlobalFunctions.changeActivityFromImage(returnArrow, LoginActivity::class.java)
+
     }
 
 
