@@ -9,7 +9,7 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/loginButtonFromFirstActivity"
         android:layout_width="0dp"
         android:layout_height="38dp"
         android:layout_marginStart="44dp"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/registerButtonFromFirstActivity"
         android:layout_width="0dp"
         android:layout_height="38dp"
         android:layout_marginStart="44dp"

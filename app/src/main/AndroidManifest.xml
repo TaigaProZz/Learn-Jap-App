@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".kanjikana.account.RegisterActivity" />
-        <activity android:name=".kanjikana.account.LoginActivity"></activity>
+        <activity android:name=".kanjikana.account.LoginActivity" />
         <activity
             android:name=".kanjikana.main.SettingsActivity"
             android:label="@string/title_activity_settings" />
@@ -29,11 +29,7 @@
         <activity android:name=".kanjikana.kana.HiraganaActivity" />
         <activity android:name=".kanjikana.quiz.Quiz" />
         <activity android:name=".kanjikana.main.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

@@ -2,14 +2,11 @@ package fr.taigaprozz.kanjikana.account
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import fr.taigaprozz.R
+import fr.taigaprozz.databinding.ActivityLoginBinding.inflate
 import fr.taigaprozz.kanjikana.main.MainActivity
 
 class LoginActivity : AppCompatActivity() {
@@ -18,18 +15,17 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        val binding = inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         auth = FirebaseAuth.getInstance()
 
-        val loginEmail = findViewById<EditText>(R.id.email_case_login)
-        val loginPassword = findViewById<EditText>(R.id.password_case_login)
 
-        val loginButton = findViewById<Button>(R.id.login_button)
+        binding.loginButton.setOnClickListener{
+            val email = binding.emailCaseLogin.text.toString()
+            val password = binding.passwordCaseLogin.text.toString()
 
-        loginButton.setOnClickListener{
-            val email = loginEmail.text.toString()
-            val password = loginPassword.text.toString()
 
             auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this){ task ->
 
@@ -47,10 +43,17 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        findViewById<Button>(R.id.registerButtonLogin).setOnClickListener {
+        binding.registerButtonLogin.setOnClickListener {
             startActivity(Intent(applicationContext, RegisterActivity::class.java))
 
         }
+
+        // back arrow
+        binding.backArrow.setOnClickListener {
+            finish()
+            startActivity(Intent(applicationContext, FirstActivity::class.java))
+        }
+
     }
     private fun updateUI(user: FirebaseUser?) {
 

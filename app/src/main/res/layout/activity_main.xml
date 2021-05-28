@@ -12,6 +12,7 @@
         android:layout_height="61dp"
         android:layout_marginEnd="4dp"
         android:src="@drawable/settings_2"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -23,10 +24,10 @@
         android:layout_height="135dp"
         android:layout_marginTop="184dp"
 
-        android:text="Hiragana"
+        android:text="@string/hiragana"
         android:gravity="center"
         android:textColor="@color/black"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:background="@drawable/background_button_rectangle_purple200"
 
@@ -41,18 +42,19 @@
         android:layout_width="150dp"
         android:layout_height="135dp"
         android:layout_marginTop="184dp"
-        android:text="Katakana"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        android:background="@drawable/background_2_button_rectangle_purple200"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.854"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/katakana_button_main"
-        tools:ignore="MissingConstraints" />
+
+        android:text="@string/katakana"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:background="@drawable/background_2_button_rectangle_purple200"
+        app:srcCompat="@drawable/katakana_button_main" />
 
     <TextView
         android:id="@+id/quiz_start"
@@ -60,18 +62,17 @@
         android:layout_height="135dp"
         android:layout_marginTop="372dp"
 
-        android:text="Quiz"
+        android:text="@string/quiz"
         android:gravity="center"
         android:textColor="@color/black"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:textStyle="bold"
-
         android:background="@drawable/background_2_button_rectangle_purple200"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView

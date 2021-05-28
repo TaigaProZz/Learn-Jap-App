@@ -14,7 +14,7 @@ import java.util.List;
 import fr.taigaprozz.R;
 
 public class KanaAdapter extends RecyclerView.Adapter<KanaAdapter.KanaViewHolder> {
-    List<Kana> listeKana;
+    List<Kana> listKana;
 
     public static class KanaViewHolder extends RecyclerView.ViewHolder {
         ImageView kana;
@@ -25,30 +25,29 @@ public class KanaAdapter extends RecyclerView.Adapter<KanaAdapter.KanaViewHolder
         }
     }
 
-    public KanaAdapter(List<Kana> listeKana) {
-        this.listeKana = listeKana;
+    public KanaAdapter(List<Kana> listKana) {
+        this.listKana = listKana;
     }
 
     @NotNull
     @Override
     public KanaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_kana_adapter, parent, false);
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.activity_kana_adapter, parent, false);
         return new KanaViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(KanaViewHolder holder, int position) {
-        Kana kana = listeKana.get(position);
+        Kana kana = listKana.get(position);
         holder.kana.setImageResource(kana.getKana());
     }
 
-    public Kana getKana(int position) {
-        return this.listeKana.get(position);
-    }
+
 
     @Override
     public int getItemCount() {
-        return listeKana.size();
+        return listKana.size();
     }
 }
 

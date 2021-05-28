@@ -91,4 +91,5 @@
     <string name="adresse_e_mail">Adresse E-mail</string>
     <string name="confirmer_mot_de_passe">Confirmer le mot de passe</string>
     <string name="s_inscrire">S\'inscrire</string>
+    <string name="arrow"><![CDATA[<]]></string>
 </resources>

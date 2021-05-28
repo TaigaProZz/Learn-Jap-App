@@ -26,7 +26,6 @@ public class HiraganaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_hiragana);
 
         // collect components from layout
-        setSupportActionBar(findViewById(R.id.toolbar_hiragana));
         TextView goingBackArrow = findViewById(R.id.goingBackArrow);
         Button buttonSwitchKatakana = findViewById(R.id.button_katakana);
         Button buttonToQuiz = findViewById(R.id.button_quiz);
@@ -50,26 +49,26 @@ public class HiraganaActivity extends AppCompatActivity {
         });
 
         // image list of hiragana
-        List<Kana> listeKana = new ArrayList<>();
-        listeKana.add(new Kana(R.drawable.hiragana_a));     listeKana.add(new Kana(R.drawable.hiragana_i));     listeKana.add(new Kana(R.drawable.hiragana_u));
-        listeKana.add(new Kana(R.drawable.hiragana_e));     listeKana.add(new Kana(R.drawable.hiragana_o));     listeKana.add(new Kana(R.drawable.hiragana_ka));
-        listeKana.add(new Kana(R.drawable.hiragana_ki));    listeKana.add(new Kana(R.drawable.hiragana_ku));    listeKana.add(new Kana(R.drawable.hiragana_ke));
-        listeKana.add(new Kana(R.drawable.hiragana_ko));    listeKana.add(new Kana(R.drawable.hiragana_sa));    listeKana.add(new Kana(R.drawable.hiragana_shi));
-        listeKana.add(new Kana(R.drawable.hiragana_su));    listeKana.add(new Kana(R.drawable.hiragana_se));    listeKana.add(new Kana(R.drawable.hiragana_so));
-        listeKana.add(new Kana(R.drawable.hiragana_ta));    listeKana.add(new Kana(R.drawable.hiragana_chi));   listeKana.add(new Kana(R.drawable.hiragana_tsu));
-        listeKana.add(new Kana(R.drawable.hiragana_te));    listeKana.add(new Kana(R.drawable.hiragana_to));    listeKana.add(new Kana(R.drawable.hiragana_na));
-        listeKana.add(new Kana(R.drawable.hiragana_ni));    listeKana.add(new Kana(R.drawable.hiragana_nu));    listeKana.add(new Kana(R.drawable.hiragana_ne));
-        listeKana.add(new Kana(R.drawable.hiragana_no));    listeKana.add(new Kana(R.drawable.hiragana_ha));    listeKana.add(new Kana(R.drawable.hiragana_hi));
-        listeKana.add(new Kana(R.drawable.hiragana_fu));    listeKana.add(new Kana(R.drawable.hiragana_he));    listeKana.add(new Kana(R.drawable.hiragana_ho));
-        listeKana.add(new Kana(R.drawable.hiragana_ma));    listeKana.add(new Kana(R.drawable.hiragana_mi));    listeKana.add(new Kana(R.drawable.hiragana_mu));
-        listeKana.add(new Kana(R.drawable.hiragana_me));    listeKana.add(new Kana(R.drawable.hiragana_mo));    listeKana.add(new Kana(R.drawable.hiragana_ya));
-        listeKana.add(new Kana(0));                         listeKana.add(new Kana(R.drawable.hiragana_yu));    listeKana.add(new Kana(0));
-        listeKana.add(new Kana(R.drawable.hiragana_yo));    listeKana.add(new Kana(R.drawable.hiragana_ra));    listeKana.add(new Kana(R.drawable.hiragana_ri));
-        listeKana.add(new Kana(R.drawable.hiragana_ru));    listeKana.add(new Kana(R.drawable.hiragana_re));    listeKana.add(new Kana(R.drawable.hiragana_ro));
-        listeKana.add(new Kana(R.drawable.hiragana_wa));    listeKana.add(new Kana(0));                         listeKana.add(new Kana(0));
-        listeKana.add(new Kana(0));                         listeKana.add(new Kana(R.drawable.hiragana_wo));    listeKana.add(new Kana(0));
-        listeKana.add(new Kana(0));                         listeKana.add(new Kana(0));                         listeKana.add(new Kana(0));
-        listeKana.add(new Kana(R.drawable.hiragana_n));
+        List<Kana> listKana = new ArrayList<>();
+        listKana.add(new Kana(R.drawable.hiragana_a));     listKana.add(new Kana(R.drawable.hiragana_i));     listKana.add(new Kana(R.drawable.hiragana_u));
+        listKana.add(new Kana(R.drawable.hiragana_e));     listKana.add(new Kana(R.drawable.hiragana_o));     listKana.add(new Kana(R.drawable.hiragana_ka));
+        listKana.add(new Kana(R.drawable.hiragana_ki));    listKana.add(new Kana(R.drawable.hiragana_ku));    listKana.add(new Kana(R.drawable.hiragana_ke));
+        listKana.add(new Kana(R.drawable.hiragana_ko));    listKana.add(new Kana(R.drawable.hiragana_sa));    listKana.add(new Kana(R.drawable.hiragana_shi));
+        listKana.add(new Kana(R.drawable.hiragana_su));    listKana.add(new Kana(R.drawable.hiragana_se));    listKana.add(new Kana(R.drawable.hiragana_so));
+        listKana.add(new Kana(R.drawable.hiragana_ta));    listKana.add(new Kana(R.drawable.hiragana_chi));   listKana.add(new Kana(R.drawable.hiragana_tsu));
+        listKana.add(new Kana(R.drawable.hiragana_te));    listKana.add(new Kana(R.drawable.hiragana_to));    listKana.add(new Kana(R.drawable.hiragana_na));
+        listKana.add(new Kana(R.drawable.hiragana_ni));    listKana.add(new Kana(R.drawable.hiragana_nu));    listKana.add(new Kana(R.drawable.hiragana_ne));
+        listKana.add(new Kana(R.drawable.hiragana_no));    listKana.add(new Kana(R.drawable.hiragana_ha));    listKana.add(new Kana(R.drawable.hiragana_hi));
+        listKana.add(new Kana(R.drawable.hiragana_fu));    listKana.add(new Kana(R.drawable.hiragana_he));    listKana.add(new Kana(R.drawable.hiragana_ho));
+        listKana.add(new Kana(R.drawable.hiragana_ma));    listKana.add(new Kana(R.drawable.hiragana_mi));    listKana.add(new Kana(R.drawable.hiragana_mu));
+        listKana.add(new Kana(R.drawable.hiragana_me));    listKana.add(new Kana(R.drawable.hiragana_mo));    listKana.add(new Kana(R.drawable.hiragana_ya));
+        listKana.add(new Kana(0));                         listKana.add(new Kana(R.drawable.hiragana_yu));    listKana.add(new Kana(0));
+        listKana.add(new Kana(R.drawable.hiragana_yo));    listKana.add(new Kana(R.drawable.hiragana_ra));    listKana.add(new Kana(R.drawable.hiragana_ri));
+        listKana.add(new Kana(R.drawable.hiragana_ru));    listKana.add(new Kana(R.drawable.hiragana_re));    listKana.add(new Kana(R.drawable.hiragana_ro));
+        listKana.add(new Kana(R.drawable.hiragana_wa));    listKana.add(new Kana(0));                         listKana.add(new Kana(0));
+        listKana.add(new Kana(0));                         listKana.add(new Kana(R.drawable.hiragana_wo));    listKana.add(new Kana(0));
+        listKana.add(new Kana(0));                         listKana.add(new Kana(0));                         listKana.add(new Kana(0));
+        listKana.add(new Kana(R.drawable.hiragana_n));
 
 
         // recycler view params
@@ -86,7 +85,7 @@ public class HiraganaActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(manager);
 
         // set adapter to recycler view
-        KanaAdapter kanaAdapter = new KanaAdapter(listeKana);
+        KanaAdapter kanaAdapter = new KanaAdapter(listKana);
         recyclerView.setAdapter(kanaAdapter);
     }
 

@@ -1,58 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black_grey"
     android:orientation="vertical"
-    >
+    android:background="@color/dark_grey">
 
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
 
     <androidx.appcompat.widget.Toolbar
-        android:background="@color/dark_grey"
         android:id="@+id/toolbar_hiragana"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title=" " >
+        android:background="@color/dark_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+        <TextView
+            android:id="@+id/goingBackArrow"
+            android:layout_width="36dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="4dp"
+            android:text="@string/back"
+            android:background="@color/dark_grey"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
-            <TextView
-                android:id="@+id/goingBackArrow"
-                android:layout_width="36dp"
-                android:layout_height="65dp"
-                android:text="@string/back"
-                android:textSize="40sp"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/titleActivity"
+            android:layout_width="123dp"
+            android:layout_height="64dp"
+            android:background="@color/dark_grey"
+            android:gravity="center"
+            android:text="@string/hiragana"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/goingBackArrow"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.478" />
 
-            <TextView
-                android:id="@+id/titleActivity"
-                android:layout_width="123dp"
-                android:layout_height="64dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="12dp"
-                android:gravity="center"
-                android:text="@string/hiragana"
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/goingBackArrow"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.478"  />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
