@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import fr.taigaprozz.R
+import fr.taigaprozz.kanjikana.main.MainActivity
 
 
 class RegisterActivity : AppCompatActivity() {
@@ -150,8 +151,10 @@ class RegisterActivity : AppCompatActivity() {
                 val account = task.getResult(ApiException::class.java)!!
                 Log.d(TAG, "firebaseAuthWithGoogle:" + account.id)
                 firebaseAuthWithGoogle(account.idToken!!)
+                Toast.makeText(applicationContext, "Connexion réussie", Toast.LENGTH_SHORT).show()
+
             } catch (e: ApiException) {
-                Toast.makeText(this, "Impossible de se connecter", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Connexion échouée", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -162,11 +165,12 @@ class RegisterActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
-                    Log.d(TAG, "signInWithCredential:success")
                     val user = auth.currentUser
+                    startActivity(Intent(applicationContext, MainActivity::class.java))
+
                 } else {
                     // If sign in fails, display a message to the user.
-                    Log.w(TAG, "signInWithCredential:failure", task.exception)
+                    Toast.makeText(applicationContext, "Connexion échouée", Toast.LENGTH_SHORT).show()
                 }
             }
     }
