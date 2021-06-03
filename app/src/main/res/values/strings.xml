@@ -92,4 +92,5 @@
     <string name="confirmer_mot_de_passe">Confirmer le mot de passe</string>
     <string name="s_inscrire">S\'inscrire</string>
     <string name="arrow"><![CDATA[<]]></string>
+    <string name="d_connexion">Déconnexion</string>
 </resources>

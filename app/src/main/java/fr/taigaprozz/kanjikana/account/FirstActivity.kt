@@ -31,9 +31,11 @@ class FirstActivity : AppCompatActivity() {
         val binding = inflate(layoutInflater)
         val view = binding.root
 
-        Handler(Looper.getMainLooper()).postDelayed( {
+
+        Handler(Looper.getMainLooper()).postDelayed({
             setContentView(view)
-        }, 5000)
+        }, 500)
+
 
         binding.loginButtonFromFirstActivity.setOnClickListener {
             startActivity(Intent(applicationContext, LoginActivity::class.java))

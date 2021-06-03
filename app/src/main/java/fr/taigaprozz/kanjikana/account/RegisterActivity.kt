@@ -44,9 +44,9 @@ class RegisterActivity : AppCompatActivity() {
         // call request function to google and firebase
         createRequest()
 
+        // sign in with google button
         val registerGoogleButton = findViewById<Button>(R.id.googleRegisterButton)
         registerGoogleButton.setOnClickListener {
-            println("test")
             signIn()
         }
 
@@ -170,7 +170,8 @@ class RegisterActivity : AppCompatActivity() {
 
                 } else {
                     // If sign in fails, display a message to the user.
-                    Toast.makeText(applicationContext, "Connexion échouée", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, "Connexion échouée", Toast.LENGTH_SHORT)
+                        .show()
                 }
             }
     }
