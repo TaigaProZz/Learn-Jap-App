@@ -93,4 +93,5 @@
     <string name="s_inscrire">S\'inscrire</string>
     <string name="arrow"><![CDATA[<]]></string>
     <string name="d_connexion">Déconnexion</string>
+    <string name="title_activity_settings2">SettingsActivity2</string>
 </resources>

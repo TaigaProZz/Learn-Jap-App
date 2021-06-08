@@ -22,7 +22,7 @@ import fr.taigaprozz.kanjikana.main.MainActivity
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
-    private lateinit var mGoogle: GoogleSignInClient
+    private lateinit var mGoogleSignIn: GoogleSignInClient
     private var RC_SIGN_IN = 123
 
 
@@ -38,6 +38,9 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+
+        println("this = $this"  )
+        println("applicationContext = $applicationContext")
 
         auth = FirebaseAuth.getInstance()
 
@@ -130,13 +133,13 @@ class RegisterActivity : AppCompatActivity() {
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
-        mGoogle = GoogleSignIn.getClient(this, gso)
+        mGoogleSignIn = GoogleSignIn.getClient(this, gso)
     }
 
     // start google sign in activity
     private fun signIn() {
 
-        val intent = mGoogle.signInIntent
+        val intent = mGoogleSignIn.signInIntent
         startActivityForResult(intent, RC_SIGN_IN)
 
     }

@@ -7,15 +7,20 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import fr.taigaprozz.R
 import fr.taigaprozz.databinding.ActivityLoginBinding.inflate
 import fr.taigaprozz.kanjikana.main.MainActivity
+import fr.taigaprozz.kanjikana.account.RegisterActivity
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
-
+    private lateinit var mGoogleSignIn: GoogleSignInClient
+    private var RC_SIGN_IN = 123
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,19 +29,60 @@ class LoginActivity : AppCompatActivity() {
         setContentView(view)
         auth = FirebaseAuth.getInstance()
 
+        /*                 call functions to login with GOOGLE                */
 
-        // call login email function
+        createRequest()
+        signIn()
+
+        // **************************************************************** \\
+
+
+
+        /*                 call functions to login with EMAIL                */
+
         logInEmail()
+
+        // **************************************************************** \\
+
+
+
+
 
         // goto register activity button
         binding.registerButtonLogin.setOnClickListener {
             startActivity(Intent(applicationContext, RegisterActivity::class.java))
         }
 
+
         // return back arrow function
         backArrow()
 
     }
+
+
+
+    /*                  FUNCTIONS to login with GOOGLE                */
+
+    private fun createRequest() {
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN!!)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+        mGoogleSignIn = GoogleSignIn.getClient(this, gso)
+    }
+
+
+    private fun signIn() {
+
+        val intent = mGoogleSignIn.signInIntent
+        startActivityForResult(intent, RC_SIGN_IN)
+
+    }
+
+    // TODO:   CONNECT BUTTON FOR GOOGLE
+
+
+    /*                  FUNCTIONS to login with EMAIL                */
 
     // login with email and password function
     private fun logInEmail() {

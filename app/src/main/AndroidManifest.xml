@@ -10,6 +10,9 @@
         android:roundIcon="@mipmap/ico"
         android:supportsRtl="true"
         android:theme="@style/Theme.KanjiKana.Main.Theme.Light">
+        <activity
+            android:name=".kanjikana.main.SettingsActivity2"
+            android:label="@string/title_activity_settings2"></activity>
         <activity android:name=".kanjikana.account.FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,9 +31,7 @@
         <activity android:name=".kanjikana.kana.KatakanaActivity" />
         <activity android:name=".kanjikana.kana.HiraganaActivity" />
         <activity android:name=".kanjikana.quiz.Quiz" />
-        <activity android:name=".kanjikana.main.MainActivity">
-
-        </activity>
+        <activity android:name=".kanjikana.main.MainActivity"></activity>
     </application>
 
 </manifest>
