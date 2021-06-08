@@ -1,7 +1,9 @@
 package fr.taigaprozz.kanjikana.account
 
+import android.content.ContentValues
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -10,8 +12,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.SignInButton
+import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.GoogleAuthProvider
 import fr.taigaprozz.R
 import fr.taigaprozz.databinding.ActivityLoginBinding.inflate
 import fr.taigaprozz.kanjikana.main.MainActivity
@@ -32,7 +37,12 @@ class LoginActivity : AppCompatActivity() {
         /*                 call functions to login with GOOGLE                */
 
         createRequest()
-        signIn()
+
+        binding.loginWithGoogle.setOnClickListener {
+            signIn()
+        }
+
+
 
         // **************************************************************** \\
 
@@ -77,6 +87,41 @@ class LoginActivity : AppCompatActivity() {
         val intent = mGoogleSignIn.signInIntent
         startActivityForResult(intent, RC_SIGN_IN)
 
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == RC_SIGN_IN) {
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+
+            try {
+                val account = task.getResult(ApiException::class.java)!!
+                Log.d(ContentValues.TAG, "firebaseAuthWithGoogle:" + account.id)
+                firebaseAuthWithGoogle(account.idToken!!)
+                Toast.makeText(applicationContext, "Connexion réussie", Toast.LENGTH_SHORT).show()
+
+            } catch (e: ApiException) {
+                Toast.makeText(this, "Connexion échouée", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun firebaseAuthWithGoogle(idToken: String) {
+        val credential = GoogleAuthProvider.getCredential(idToken, null)
+        auth.signInWithCredential(credential)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    val user = auth.currentUser
+                    startActivity(Intent(applicationContext, MainActivity::class.java))
+
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Toast.makeText(applicationContext, "Connexion échouée", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            }
     }
 
     // TODO:   CONNECT BUTTON FOR GOOGLE

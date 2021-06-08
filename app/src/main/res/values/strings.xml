@@ -94,4 +94,7 @@
     <string name="arrow"><![CDATA[<]]></string>
     <string name="d_connexion">Déconnexion</string>
     <string name="title_activity_settings2">SettingsActivity2</string>
+    <string name="eszdzdadadadad">eszdzdadadadad</string>
+    <string name="nom">Nom:</string>
+    <string name="email">Email:</string>
 </resources>

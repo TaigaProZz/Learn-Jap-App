@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.ktx.Firebase
 import fr.taigaprozz.R
@@ -24,14 +25,15 @@ class SettingsActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         // call function to show user's info
-        getUserProfile()
+        getUserProfileInfo()
+        getGoogleUserProfileInfo()
 
         signOut()
 
     }
 
     // show user info
-    private fun getUserProfile() {
+    private fun getUserProfileInfo() {
         val email = findViewById<TextView>(R.id.email_view)
 
         val user = auth.currentUser
@@ -43,9 +45,28 @@ class SettingsActivity : AppCompatActivity() {
         }
     }
 
-    private fun getGoogleUser() {
+    private fun getGoogleUserProfileInfo() {
         val user = auth.currentUser
+        val email = findViewById<TextView>(R.id.email_view)
+        val name = findViewById<TextView>(R.id.name_view)
+
+        user?.let {
+            for (profile in it.providerData){
+
+                val userName = it.displayName
+                name.text = userName
+
+                val userEmail = it.email
+                email.text = userEmail
+
+
+
+            }
+        }
+
+
     }
+
 
     private fun signOut() {
         val signOutButton = findViewById<Button>(R.id.signOut_button)

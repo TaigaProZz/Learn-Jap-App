@@ -1,4 +1,4 @@
-package fr.taigaprozz.kanjikana.quiz
+package fr.taigaprozz.kanjikana.main
 
 import android.app.Application
 

@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import fr.taigaprozz.R
 import fr.taigaprozz.kanjikana.kana.HiraganaActivity
 import fr.taigaprozz.kanjikana.kana.KatakanaActivity
-import fr.taigaprozz.kanjikana.quiz.GlobalFunctions
 import fr.taigaprozz.kanjikana.quiz.SettingsQuiz
 
 class MainActivity : AppCompatActivity() {
