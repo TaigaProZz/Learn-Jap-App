@@ -23,7 +23,6 @@ import fr.taigaprozz.kanjikana.main.MainActivity
 class RegisterActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var mGoogleSignIn: GoogleSignInClient
-    private var RC_SIGN_IN = 123
 
 
     override fun onStart() {
@@ -140,14 +139,14 @@ class RegisterActivity : AppCompatActivity() {
     private fun signIn() {
 
         val intent = mGoogleSignIn.signInIntent
-        startActivityForResult(intent, RC_SIGN_IN)
+        startActivityForResult(intent, 123)
 
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == RC_SIGN_IN) {
+        if (requestCode == 123) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
 
             try {
@@ -157,7 +156,8 @@ class RegisterActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, "Connexion réussie", Toast.LENGTH_SHORT).show()
 
             } catch (e: ApiException) {
-                Toast.makeText(this, "Connexion échouée", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, " échouée", Toast.LENGTH_SHORT).show()
+                println("test $e")
             }
         }
     }
@@ -168,13 +168,16 @@ class RegisterActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
+                    Log.d(TAG, "signInWithCredential:success")
                     val user = auth.currentUser
+                    updateUI(user)
                     startActivity(Intent(applicationContext, MainActivity::class.java))
 
                 } else {
                     // If sign in fails, display a message to the user.
                     Toast.makeText(applicationContext, "Connexion échouée", Toast.LENGTH_SHORT)
                         .show()
+                    updateUI(null)
                 }
             }
     }

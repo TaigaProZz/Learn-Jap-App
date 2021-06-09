@@ -2,9 +2,11 @@ package fr.taigaprozz.kanjikana.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import fr.taigaprozz.R
 import fr.taigaprozz.kanjikana.kana.HiraganaActivity
 import fr.taigaprozz.kanjikana.kana.KatakanaActivity
@@ -16,6 +18,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+
+        findViewById<Button>(R.id.theme_button).setOnClickListener {
+            AppCompatDelegate.MODE_NIGHT_NO
+        }
 
 
         // start hiragana activity with the button
@@ -41,4 +49,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(applicationContext, SettingsActivity::class.java))
         }
     }
+
+
 }

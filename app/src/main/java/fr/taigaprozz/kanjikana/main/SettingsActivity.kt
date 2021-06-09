@@ -5,9 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.ktx.Firebase
 import fr.taigaprozz.R
 import fr.taigaprozz.kanjikana.account.LoginActivity
 
@@ -68,15 +66,18 @@ class SettingsActivity : AppCompatActivity() {
     }
 
 
+
     private fun signOut() {
         val signOutButton = findViewById<Button>(R.id.signOut_button)
 
         signOutButton.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
-            finish()
             startActivity(Intent(applicationContext, LoginActivity::class.java))
+            finish()
         }
 
     }
+
+
 }
 
