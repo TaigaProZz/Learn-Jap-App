@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import fr.taigaprozz.R
+import fr.taigaprozz.kanjikana.GlobalFunctions
 import fr.taigaprozz.kanjikana.kana.HiraganaActivity
 import fr.taigaprozz.kanjikana.kana.KatakanaActivity
 import fr.taigaprozz.kanjikana.quiz.SettingsQuiz
@@ -18,11 +19,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        GlobalFunctions.setNoAnimation(this)
+
 
 
 
         findViewById<Button>(R.id.theme_button).setOnClickListener {
-            AppCompatDelegate.MODE_NIGHT_NO
+            AppCompatDelegate.MODE_NIGHT_YES
         }
 
 

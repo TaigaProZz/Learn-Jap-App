@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import fr.taigaprozz.R
+import fr.taigaprozz.kanjikana.GlobalFunctions
 import fr.taigaprozz.kanjikana.main.MainActivity
 
 
@@ -37,6 +38,8 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+        GlobalFunctions.setNoAnimation(this)
+
 
         println("this = $this"  )
         println("applicationContext = $applicationContext")

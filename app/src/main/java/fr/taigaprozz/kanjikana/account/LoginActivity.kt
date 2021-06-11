@@ -1,5 +1,6 @@
 package fr.taigaprozz.kanjikana.account
 
+import android.app.Activity
 import android.content.ContentValues
 import android.content.Intent
 import android.os.Bundle
@@ -12,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -20,7 +20,6 @@ import com.google.firebase.auth.GoogleAuthProvider
 import fr.taigaprozz.R
 import fr.taigaprozz.databinding.ActivityLoginBinding.inflate
 import fr.taigaprozz.kanjikana.main.MainActivity
-import fr.taigaprozz.kanjikana.account.RegisterActivity
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
@@ -176,6 +175,7 @@ class LoginActivity : AppCompatActivity() {
         backArrow.setOnClickListener {
             finish()
             startActivity(Intent(applicationContext, FirstActivity::class.java))
+
         }
     }
 
