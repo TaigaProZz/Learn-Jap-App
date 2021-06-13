@@ -8,7 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import java.security.AccessControlContext
 
 object GlobalFunctions: AppCompatActivity() {
-    
+
+    // no animation when activity is changed
     fun setNoAnimation(activity: Activity){
         activity.overridePendingTransition(0, 0)
 

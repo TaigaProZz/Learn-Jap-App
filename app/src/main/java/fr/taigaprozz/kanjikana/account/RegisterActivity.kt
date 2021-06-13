@@ -37,8 +37,9 @@ class RegisterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
+        // no animation when activity is changed
         GlobalFunctions.setNoAnimation(this)
+        setContentView(R.layout.activity_register)
 
 
         println("this = $this"  )

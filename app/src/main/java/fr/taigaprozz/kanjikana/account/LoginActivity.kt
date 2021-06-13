@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import fr.taigaprozz.R
 import fr.taigaprozz.databinding.ActivityLoginBinding.inflate
+import fr.taigaprozz.kanjikana.GlobalFunctions
 import fr.taigaprozz.kanjikana.main.MainActivity
 
 class LoginActivity : AppCompatActivity() {
@@ -27,6 +28,9 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // no animation when activity is changed
+        GlobalFunctions.setNoAnimation(this)
+        // view binding
         val binding = inflate(layoutInflater)
         val view = binding.root
         setContentView(view)

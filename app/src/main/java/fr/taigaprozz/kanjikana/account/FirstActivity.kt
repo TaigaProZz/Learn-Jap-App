@@ -7,6 +7,7 @@ import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import fr.taigaprozz.databinding.ActivityFirstBinding.inflate
+import fr.taigaprozz.kanjikana.GlobalFunctions
 import fr.taigaprozz.kanjikana.main.MainActivity
 
 class FirstActivity : AppCompatActivity() {
@@ -28,6 +29,9 @@ class FirstActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // no animation when activity is changed
+        GlobalFunctions.setNoAnimation(this)
+        // view binding
         val binding = inflate(layoutInflater)
         val view = binding.root
 

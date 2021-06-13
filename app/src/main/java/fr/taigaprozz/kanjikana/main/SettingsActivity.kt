@@ -21,11 +21,9 @@ class SettingsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // no animation when activity is changed
         setNoAnimation(this)
-
         setContentView(R.layout.settings_activity)
-
-
 
 
         auth = FirebaseAuth.getInstance()
