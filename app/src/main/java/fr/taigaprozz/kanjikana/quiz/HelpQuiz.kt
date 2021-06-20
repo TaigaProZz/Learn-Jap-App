@@ -6,11 +6,14 @@ import fr.taigaprozz.R
 import android.widget.TextView
 import android.content.Intent
 import android.view.View
+import fr.taigaprozz.kanjikana.GlobalFunctions
 import fr.taigaprozz.kanjikana.quiz.SettingsQuiz
 
 class HelpQuiz : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // no animation when activity is changed
+        GlobalFunctions.setNoAnimation(this)
         setContentView(R.layout.activity_help_quiz)
         val backArrow = findViewById<TextView>(R.id.goingBackArrow)
 

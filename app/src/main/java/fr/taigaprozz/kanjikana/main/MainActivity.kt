@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
 
         findViewById<Button>(R.id.theme_button).setOnClickListener {
-            AppCompatDelegate.MODE_NIGHT_YES
+                //
         }
 
 

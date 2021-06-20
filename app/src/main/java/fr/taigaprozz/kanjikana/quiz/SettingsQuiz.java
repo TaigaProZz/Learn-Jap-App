@@ -36,37 +36,37 @@ public class SettingsQuiz extends AppCompatActivity {
         hiraganaLevel1.setOnClickListener(v -> {
             finish();
             startActivity(new Intent(getApplicationContext(), Quiz.class));
-            Levels.getInstance().setLevel_hiragana(1);
+            Levels.getInstance().setLevelHiragana(1);
         });
 
         hiraganaLevel2.setOnClickListener(v -> {
             finish();
             startActivity(new Intent(getApplicationContext(), Quiz.class));
-            Levels.getInstance().setLevel_hiragana(2);
+            Levels.getInstance().setLevelHiragana(2);
         });
 
         hiraganaLevel3.setOnClickListener(v -> {
             finish();
             startActivity(new Intent(getApplicationContext(), Quiz.class));
-            Levels.getInstance().setLevel_hiragana(3);
+            Levels.getInstance().setLevelHiragana(3);
         });
 
         katakanaLevel1.setOnClickListener(v -> {
             finish();
             startActivity(new Intent(getApplicationContext(), Quiz.class));
-            Levels.getInstance().setLevel_katakana(1);
+            Levels.getInstance().setLevelKatakana(1);
         });
 
         katakanaLevel2.setOnClickListener(v -> {
             finish();
             startActivity(new Intent(getApplicationContext(), Quiz.class));
-            Levels.getInstance().setLevel_katakana(2);
+            Levels.getInstance().setLevelKatakana(2);
         });
 
         katakanaLevel3.setOnClickListener(v -> {
             finish();
             startActivity(new Intent(getApplicationContext(), Quiz.class));
-            Levels.getInstance().setLevel_katakana(3);
+            Levels.getInstance().setLevelKatakana(3);
         });
 
         backArrow.setOnClickListener(v -> {

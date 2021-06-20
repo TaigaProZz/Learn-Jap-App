@@ -6,6 +6,8 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.google.firebase.auth.FirebaseAuth
 import fr.taigaprozz.R
 import fr.taigaprozz.kanjikana.GlobalFunctions.setNoAnimation
@@ -15,7 +17,6 @@ class SettingsActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
-    // val photo = findViewById<ImageView>(R.id.photo_view)
 
 
 
@@ -43,11 +44,10 @@ class SettingsActivity : AppCompatActivity() {
     // show user info
     private fun getUserProfileInfo() {
         val email = findViewById<TextView>(R.id.email_view)
-
         val user = auth.currentUser
+
         if (user != null) {
             val userEmail = user.email
-
             email.text = userEmail
         }
     }
@@ -74,9 +74,12 @@ class SettingsActivity : AppCompatActivity() {
                 email.text = userEmail
 
                 // show image profile from google
-                val userAvatar = it.photoUrl
-                avatar.setImageURI(userAvatar)
-                println(userAvatar)
+                val userAvatar = user.photoUrl
+
+                Glide.with(this)
+                    .load(userAvatar)
+                    .apply(RequestOptions.circleCropTransform())
+                    .into(avatar)
 
 
 
@@ -106,9 +109,9 @@ class SettingsActivity : AppCompatActivity() {
         val backArrow = findViewById<ImageView>(R.id.backArrow)
         backArrow.setOnClickListener {
             startActivity(Intent(applicationContext, MainActivity::class.java))
+            finish()
         }
 
     }
-
 }
 
